@@ -46,13 +46,13 @@
   "keywords": "network science, economics of networks, network formation, diffusion, contagion, financial networks, social networks, economic theory, conference",
   "location": {
     "@type": "Place",
-    "name": "University of Luxembourg — Belval Campus",
+    "name": "University of Luxembourg — Weicker Building, Kirchberg",
     "url": "https://www.uni.lu/",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2, place de l'Université",
-      "addressLocality": "Esch-sur-Alzette",
-      "postalCode": "L-4365",
+      "streetAddress": "4, rue Alphonse Weicker",
+      "addressLocality": "Luxembourg",
+      "postalCode": "L-2721",
       "addressCountry": "LU"
     }
   },
@@ -66,12 +66,6 @@
     "@type": "Organization",
     "name": "Luxembourg National Research Fund (FNR)",
     "url": "https://www.fnr.lu/"
-  },
-  "subEvent": {
-    "@type": "Event",
-    "name": "Call for papers — submission deadline",
-    "startDate": "2026-07-31",
-    "url": "https://app.oxfordabstracts.com/stages/82849/submitter"
   }
 }
 </script>
@@ -197,6 +191,86 @@
   .date-row .tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
   .date-row.key{background:linear-gradient(90deg,rgba(217,164,65,.13),transparent 70%)}
   .date-row.key .when{color:var(--gold)}
+  .date-row.done .when,.date-row.done .what{color:var(--slate)}
+  .date-row .tag.live{color:var(--gold);font-weight:700}
+
+  /* ---------- LOCAL INFORMATION ---------- */
+  .sub{margin-top:60px}
+  .sub:first-of-type{margin-top:36px}
+  .subhead{display:flex;align-items:baseline;gap:16px;margin:0 0 24px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+  .subhead h3{font-size:1.28rem;letter-spacing:-.018em}
+  .subhead .sh-note{margin-left:auto;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--slate);white-space:nowrap}
+  .cols-2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .cols-2 h4,.venue h4{font-family:var(--display);font-weight:600;font-size:1.02rem;margin:0 0 12px;letter-spacing:-.005em}
+  .cols-2 p{margin:0 0 13px;font-size:1rem;max-width:52ch}
+  .cols-2 p:last-child{margin-bottom:0}
+
+  /* venue */
+  .venuecard{margin-top:4px}
+  .vtext{margin:14px 0 0;font-size:1.02rem;max-width:58ch}
+  .facts.facts-2{grid-template-columns:repeat(2,1fr);gap:26px;max-width:520px}
+
+  /* rate table */
+  .table-wrap{overflow-x:auto;margin-top:24px;border:1px solid var(--line);border-radius:6px;background:#fff}
+  table.rates{width:100%;border-collapse:collapse;min-width:600px;font-variant-numeric:tabular-nums}
+  table.rates caption{caption-side:bottom;text-align:left;padding:12px 18px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+  table.rates th,table.rates td{padding:13px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  table.rates thead th{background:var(--paper-2);font-family:var(--mono);font-weight:400;font-size:.67rem;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--gold);line-height:1.5}
+  table.rates tbody th{font-family:var(--mono);font-size:.8rem;font-weight:700;white-space:nowrap}
+  table.rates td{font-family:var(--display);font-weight:600;font-size:1.02rem;white-space:nowrap}
+  table.rates td .dbl{color:var(--slate);font-weight:400}
+  table.rates tbody tr:last-child th,table.rates tbody tr:last-child td{border-bottom:0}
+
+  /* numbered booking steps */
+  ol.steps-list{counter-reset:st;list-style:none;margin:14px 0 0;padding:0;
+    display:flex;flex-direction:column;gap:11px;max-width:68ch}
+  ol.steps-list li{counter-increment:st;position:relative;padding-left:36px;font-size:1rem;line-height:1.55}
+  ol.steps-list li::before{
+    content:counter(st);position:absolute;left:0;top:2px;width:23px;height:23px;border-radius:50%;
+    background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:.7rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  figure.shot{margin:28px 0 0}
+  figure.shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:6px;background:#fff}
+  figure.shot figcaption{margin-top:11px;font-family:var(--mono);font-size:.7rem;color:var(--slate);
+    letter-spacing:.03em;line-height:1.65;max-width:66ch}
+
+  /* accommodation */
+  .hotel + .hotel{margin-top:22px}
+  .hotel{
+    background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:32px 34px;position:relative;overflow:hidden;
+    box-shadow:0 8px 26px rgba(14,26,48,.05);margin-top:6px;
+  }
+  .hotel::before{content:"";position:absolute;left:0;top:0;height:3px;width:76px;background:var(--gold)}
+  .hotel h3{font-size:1.36rem;letter-spacing:-.016em}
+  .hotel h3 a{text-decoration:none;border-bottom:1px solid rgba(176,129,43,.45);transition:color .2s}
+  .hotel h3 a:hover{color:var(--gold)}
+  .hotel .addr{font-family:var(--mono);font-size:.76rem;color:var(--slate);margin:9px 0 0;letter-spacing:.02em}
+  .facts{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+    margin:26px 0 0;padding:24px 0 0;border-top:1px solid var(--line);
+  }
+  .facts > div{display:flex;flex-direction:column;gap:4px}
+  .facts dt{font-family:var(--mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  .facts dd{margin:0}
+  .facts dd b{font-family:var(--display);font-weight:700;font-size:1.24rem;letter-spacing:-.012em;display:block;line-height:1.15}
+  .facts .fine{display:block;font-size:.84rem;color:var(--slate);line-height:1.42;margin-top:4px}
+  .howto{margin-top:26px;padding-top:24px;border-top:1px solid var(--line);font-size:1rem}
+  .howto a{color:var(--gold)}
+  .howto .ref{font-family:var(--mono);font-size:.86em;background:rgba(176,129,43,.12);
+    border:1px solid rgba(176,129,43,.3);border-radius:3px;padding:.1em .4em;white-space:nowrap}
+  .howto .fineprint{margin:10px 0 0;font-size:.86rem;color:var(--slate)}
+  .hotel-actions{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn-ink{background:var(--ink);color:var(--paper)}
+  .btn-ink:hover{background:var(--gold);color:#fff;transform:translateY(-1px)}
+  .btn-line{border:1px solid rgba(14,26,48,.28);color:var(--ink)}
+  .btn-line:hover{border-color:var(--gold);color:var(--gold)}
+  .more{margin-top:22px;font-size:.96rem;max-width:64ch}
+  .more a{color:var(--gold)}
 
   /* submit */
   .submit-box{background:var(--ink);color:var(--paper);border-radius:6px;padding:46px 44px;position:relative;overflow:hidden}
@@ -255,6 +329,13 @@
     .nav-links{display:none}
     .date-row{grid-template-columns:120px 1fr;}
     .date-row .tag{grid-column:2;grid-row:2}
+    .facts{grid-template-columns:repeat(2,1fr);gap:20px}
+    .hotel{padding:26px 22px}
+    .cols-2{grid-template-columns:1fr;gap:30px}
+    .subhead .sh-note{display:none}
+  }
+  @media (max-width:480px){
+    .facts{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -270,12 +351,12 @@
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#dates">Key dates</a>
-      <a href="#submit">Submit</a>
+      <a href="#decisions">Decisions</a>
       <a href="#program">Program</a>
+      <a href="#local">Local info</a>
       <a href="#organizers">Organizers</a>
-      <a href="https://www.visitluxembourg.com/" target="_blank" rel="noopener">Visiting Luxembourg</a>
     </div>
-    <a class="nav-cta" href="https://app.oxfordabstracts.com/stages/82849/submitter" target="_blank" rel="noopener">Submit a paper</a>
+    <a class="nav-cta" href="#lodging">Book a hotel</a>
   </div>
 </nav>
 
@@ -290,14 +371,14 @@
       <span class="sep">/</span>
       <span><b>University of Luxembourg</b></span>
       <span class="sep">/</span>
-      <span>Belval and Luxembourg City</span>
+      <span>Weicker Building, Kirchberg</span>
     </div>
     <div class="hero-actions">
-      <a class="btn btn-gold" href="https://app.oxfordabstracts.com/stages/82849/submitter" target="_blank" rel="noopener">Submit a paper →</a>
+      <a class="btn btn-gold" href="#lodging">Book your accommodation →</a>
       <a class="btn btn-ghost" href="https://mailchi.mp/7b7efbed4102/network-science-and-economics-conference-mailing-list" target="_blank" rel="noopener">Join the mailing list</a>
     </div>
     <div class="countdown" id="countdown">
-      <span>Submission deadline · July 31, 2026</span>
+      <span>Author notifications have been sent · Hotel booking is open</span>
     </div>
   </div>
 </header>
@@ -310,14 +391,14 @@
     <div class="grid-2">
       <div>
         <p class="lede">The Network Science and Economics Conference brings together economists, computer scientists, and applied mathematicians working on networks — how they form, what flows across them, and how they shape markets, institutions, and behavior.</p>
-        <p class="lede">In 2026 the series crosses the Atlantic for the first time. We are delighted to host the conference at the University of Luxembourg, whose Belval campus sits at the heart of Europe — a short ride from Luxembourg City and a natural crossroads for the field's growing European and international community.</p>
+        <p class="lede">In 2026 the series crosses the Atlantic for the first time. We are delighted to host the conference at the University of Luxembourg, in the Weicker Building on the Kirchberg plateau — fifteen minutes from the airport by tram, and a natural crossroads for the field's growing European and international community.</p>
         <p class="lede muted">The conference is part of a series that now meets twice each year. We look forward to welcoming you for three days of talks, posters, and conversation.</p>
       </div>
       <div class="card">
         <h3>At a glance</h3>
         <p class="muted" style="margin:.4rem 0 1.1rem">Three days of plenaries, contributed talks, and posters on the economics of networks.</p>
         <p style="margin:.2rem 0"><span class="tag" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)">Dates</span><br><b>October 23–25, 2026</b></p>
-        <p style="margin:1rem 0 .2rem"><span class="tag" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)">Venue</span><br><b>University of Luxembourg</b><br><span class="muted">Belval campus, Esch-sur-Alzette</span></p>
+        <p style="margin:1rem 0 .2rem"><span class="tag" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)">Venue</span><br><b>Weicker Building</b><br><span class="muted">University of Luxembourg, Kirchberg</span></p>
         <p style="margin:1rem 0 .2rem"><span class="tag" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)">Contact</span><br><a href="mailto:networksciecon@gmail.com" style="color:var(--gold)">networksciecon@gmail.com</a></p>
       </div>
     </div>
@@ -328,20 +409,35 @@
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">02</span><h2>Key dates</h2></div>
     <div class="dates">
-      <div class="date-row key">
+      <div class="date-row done">
         <span class="when">Jul 31, 2026</span>
         <span class="what">Submission deadline for all papers and posters</span>
-        <span class="tag">Confirmed</span>
+        <span class="tag">Closed</span>
+      </div>
+      <div class="date-row done">
+        <span class="when">Aug 2026</span>
+        <span class="what">Author notifications sent to everyone who submitted</span>
+        <span class="tag">Done</span>
       </div>
       <div class="date-row">
-        <span class="when">Aug–Sep 2026</span>
-        <span class="what">Author notifications</span>
-        <span class="tag">To be confirmed</span>
+        <span class="when">Open now</span>
+        <span class="what">Registration for accepted contributions</span>
+        <span class="tag live">Open</span>
       </div>
       <div class="date-row">
         <span class="when">Sep 2026</span>
-        <span class="what">Registration opens · program published</span>
+        <span class="what">Full program published</span>
         <span class="tag">To be confirmed</span>
+      </div>
+      <div class="date-row key">
+        <span class="when">Sep 24, 2026</span>
+        <span class="what">Last day to book the Accor hotels with promo code EVEBB</span>
+        <span class="tag live">Book now</span>
+      </div>
+      <div class="date-row key">
+        <span class="when">Oct 9, 2026</span>
+        <span class="what">Last day to book the Best Western at the conference rate</span>
+        <span class="tag live">Book now</span>
       </div>
       <div class="date-row key">
         <span class="when">Oct 23–25, 2026</span>
@@ -353,16 +449,19 @@
   </div>
 </section>
 
-<section id="submit">
+<section id="decisions">
   <div class="wrap">
     <div class="submit-box">
-      <div class="eyebrow">Call for papers</div>
-      <h2>Share your work with the network</h2>
-      <p>We welcome submissions of theoretical and empirical work on networks in economics, broadly construed — network formation, diffusion and contagion, financial networks, social and economic interactions, markets, and the methods that study them.</p>
-      <p class="deadline">Deadline for all submissions: <b>July 31, 2026</b></p>
+      <div class="eyebrow">Decisions</div>
+      <h2>Notifications have been sent</h2>
+      <p>Thank you to everyone who submitted — we received a great deal of strong work, and every author has now been notified of the outcome by email.</p>
+      <p>Accepted contributions received registration details in the same message. Please register and book your accommodation early: the first hotel deadline is <b>24 September</b>.</p>
+      <p class="deadline">Didn't receive your notification? Write to <a href="mailto:networksciecon@gmail.com" style="color:var(--gold-bright)">networksciecon@gmail.com</a></p>
       <div class="submit-actions">
-        <a class="btn btn-gold" href="https://app.oxfordabstracts.com/stages/82849/submitter" target="_blank" rel="noopener">Submit via Oxford Abstracts →</a>
-        <a class="btn btn-ghost" href="https://www.stanford.edu/~jacksonm/CallPapersLuxembourg-2026" target="_blank" rel="noopener">Read the full call for papers</a>
+        <!-- When the public registration link is ready, swap the button below for:
+             <a class="btn btn-gold" href="PASTE-REGISTRATION-URL-HERE" target="_blank" rel="noopener">Register →</a> -->
+        <a class="btn btn-gold" href="#lodging">Book your accommodation →</a>
+        <a class="btn btn-ghost" href="https://www.stanford.edu/~jacksonm/CallPapersLuxembourg-2026" target="_blank" rel="noopener">Read the call for papers</a>
       </div>
     </div>
   </div>
@@ -371,7 +470,7 @@
 <section id="program" style="background:var(--paper-2)">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">03</span><h2>Program</h2></div>
-    <p class="lede">The full program — plenary speakers, the schedule of contributed talks, and poster sessions — will be published here after notifications go out in late summer 2026.</p>
+    <p class="lede">Now that notifications have gone out, the full program — plenary speakers, the schedule of contributed talks, and poster sessions — is being assembled and will be published here in September.</p>
     <p class="lede muted">In the meantime, you can preview the shape of the meeting through previous editions of the series below.</p>
     <div class="history">
       <a class="chip" href="https://www.stanford.edu/~jacksonm/program-2015-4-28.pdf" target="_blank" rel="noopener">Harvard · 2015</a>
@@ -390,9 +489,192 @@
   </div>
 </section>
 
+<section id="local">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Local information</h2></div>
+    <p class="lede">Where the sessions are, how to reach them, where to stay, and what to do with a free evening.</p>
+
+    <!-- ─────────── VENUE ─────────── -->
+    <div class="sub" id="venue">
+      <div class="subhead"><h3>Conference venue</h3><span class="sh-note">All sessions</span></div>
+      <div class="hotel venuecard">
+        <h3>Weicker Building, University of Luxembourg</h3>
+        <p class="addr">4, rue Alphonse Weicker · L-2721 Luxembourg</p>
+        <p class="vtext">Every session takes place in the Weicker Building on the Kirchberg plateau, the university's campus inside Luxembourg City. The tram stops at the door.</p>
+        <dl class="facts facts-2">
+          <div>
+            <dt>Tram stop</dt>
+            <dd><b>Alphonse Weicker</b><span class="fine">line T1, at the building</span></dd>
+          </div>
+          <div>
+            <dt>From the airport</dt>
+            <dd><b>≈15 min</b><span class="fine">direct, no ticket needed</span></dd>
+          </div>
+        </dl>
+        <div class="hotel-actions">
+          <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&amp;query=4%2C+rue+Alphonse+Weicker%2C+L-2721+Luxembourg" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── GETTING HERE ─────────── -->
+    <div class="sub" id="travel">
+      <div class="subhead"><h3>Getting here</h3><span class="sh-note">Transport is free</span></div>
+      <div class="cols-2">
+        <div>
+          <h4>Arriving in Luxembourg</h4>
+          <p><b>By air.</b> Luxembourg Findel (LUX) is the country's only airport. The tram runs from the terminal across Kirchberg without a change — about fifteen minutes to the venue.</p>
+          <p><b>By rail.</b> TGV InOui runs direct from Paris Gare de l'Est in a little over two hours, calling at Metz. There are direct services from Brussels and from Trier. From Luxembourg Gare Centrale, take the tram towards the airport and get off at Alphonse Weicker.</p>
+        </div>
+        <div>
+          <h4>Getting around</h4>
+          <p><b>Public transport is free.</b> Since 2020, buses, trams and second-class trains have been free of charge throughout Luxembourg, for residents and visitors alike. There is no ticket to buy and nothing to validate — you simply get on.</p>
+          <p><b>The tram.</b> A single line runs from the airport across the Kirchberg plateau to Gare Centrale and on towards the stadium, so the venue, the hotels, the station and the airport all sit on the same route.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── LODGING ─────────── -->
+    <div class="sub" id="lodging">
+      <div class="subhead"><h3>Lodging</h3><span class="sh-note">4 hotels · 2 booking routes</span></div>
+      <p class="lede" style="font-size:1.06rem">Rooms are held for the conference at four hotels, each roughly fifteen minutes from the venue by tram. The two groups book differently, so please follow the instructions for the one you choose — and book early, as both deadlines fall well before the conference.</p>
+
+      <!-- Accor: three hotels, one promo code -->
+      <div class="hotel">
+        <h3>Sofitel Europe · Novotel Kirchberg · Mama Shelter</h3>
+        <p class="addr">Three Accor hotels in Luxembourg City · one shared promo code</p>
+
+        <dl class="facts">
+          <div>
+            <dt>Promo code</dt>
+            <dd><b>EVEBB</b><span class="fine">enter it when searching</span></dd>
+          </div>
+          <div>
+            <dt>Book by</dt>
+            <dd><b>24 Sep 2026</b><span class="fine">rooms subject to availability</span></dd>
+          </div>
+          <div>
+            <dt>Breakfast</dt>
+            <dd><b>Included</b><span class="fine">in every rate below</span></dd>
+          </div>
+          <div>
+            <dt>Getting there</dt>
+            <dd><b>≈15 min</b><span class="fine">from the venue by tram</span></dd>
+          </div>
+        </dl>
+
+        <div class="table-wrap">
+          <table class="rates">
+            <caption>Per-night rates · single / double · breakfast included</caption>
+            <thead>
+              <tr>
+                <th scope="col">Night</th>
+                <th scope="col">Sofitel Luxembourg Europe</th>
+                <th scope="col">Novotel Luxembourg Kirchberg</th>
+                <th scope="col">Mama Shelter Luxembourg</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Thu 22 Oct</th>
+                <td>€280 <span class="dbl">/ €300</span></td>
+                <td>€200 <span class="dbl">/ €220</span></td>
+                <td>€200 <span class="dbl">/ €220</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Fri 23 Oct</th>
+                <td>€200 <span class="dbl">/ €220</span></td>
+                <td>€140 <span class="dbl">/ €160</span></td>
+                <td>€140 <span class="dbl">/ €160</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Sat 24 Oct</th>
+                <td>€200 <span class="dbl">/ €220</span></td>
+                <td>€140 <span class="dbl">/ €160</span></td>
+                <td>€140 <span class="dbl">/ €160</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Sun 25 Oct</th>
+                <td>€310 <span class="dbl">/ €330</span></td>
+                <td>€250 <span class="dbl">/ €270</span></td>
+                <td>€250 <span class="dbl">/ €270</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="howto">
+          <p><b>How to book at the conference rate:</b></p>
+          <ol class="steps-list">
+            <li>Go to <a href="https://all.accor.com/a/en.html" target="_blank" rel="noopener">all.accor.com</a>.</li>
+            <li>Type the name of one of the three hotels — <b>Sofitel Luxembourg</b>, <b>Novotel Luxembourg</b> or <b>Mama Shelter Luxembourg</b> — into the destination field.</li>
+            <li>Enter your arrival and departure dates.</li>
+            <li>Click <b>Special rates</b> to expand the options.</li>
+            <li>Under <b>Other special rates and promo code</b>, choose <b>Promo Code</b> and enter <span class="ref">EVEBB</span>.</li>
+            <li>Click <b>Search</b>. The discounted rooms appear, and you can complete the booking.</li>
+          </ol>
+
+          <figure class="shot">
+            <img src="bookingsteps.jpg" alt="The ALL Accor search form with four numbered callouts: the destination field, the dates field, the Special rates link, and the promo code selector with EVEBB entered." loading="lazy" width="1600" height="736">
+            <figcaption>The four fields to fill in, numbered in order. Shown here in French — the layout is identical in English.</figcaption>
+          </figure>
+
+          <p class="fineprint"><b>Staying longer?</b> The conference rate covers the nights of 22 to 25 October only. Book those nights first with the promo code, then contact the hotel's reservations department to add extra nights; rates and availability for those are quoted on request.</p>
+        </div>
+      </div>
+
+      <!-- Best Western -->
+      <div class="hotel">
+        <h3><a href="https://www.bestwestern.fr/fr/hotel-Luxembourg-Best-Western-Grand-Hotel-Victor-Hugo-95442" target="_blank" rel="noopener">Best Western Plus Grand Hotel Victor Hugo</a></h3>
+        <p class="addr">3–5 Avenue Victor Hugo · L-1750 Luxembourg</p>
+
+        <dl class="facts">
+          <div>
+            <dt>Rate</dt>
+            <dd><b>€165</b><span class="fine">per night, breakfast not included</span></dd>
+          </div>
+          <div>
+            <dt>Rooms held</dt>
+            <dd><b>20</b><span class="fine">first come, first served</span></dd>
+          </div>
+          <div>
+            <dt>Book by</dt>
+            <dd><b>9 Oct 2026</b><span class="fine">the rate is released after this date</span></dd>
+          </div>
+          <div>
+            <dt>Getting there</dt>
+            <dd><b>≈15 min</b><span class="fine">from the venue by tram</span></dd>
+          </div>
+        </dl>
+
+        <div class="howto">
+          <p><b>How to book:</b> download the hotel's authorization form, complete and sign it, then email it to <a href="mailto:info@grandhotelvictorhugo.lu">info@grandhotelvictorhugo.lu</a>. The booking reference <span class="ref">96649 UNI</span> is already printed on the form.</p>
+          <p class="fineprint">Send the completed form to the hotel directly — the organisers do not handle payment details.</p>
+        </div>
+
+        <div class="hotel-actions">
+          <a class="btn btn-ink" href="hotelbookingform.pdf" target="_blank" rel="noopener">Download the booking form (PDF) →</a>
+          <a class="btn btn-line" href="mailto:info@grandhotelvictorhugo.lu">Email the hotel</a>
+        </div>
+      </div>
+
+      <p class="more muted">Rooms at both rates are limited. If they run out, <a href="https://www.visitluxembourg.com/" target="_blank" rel="noopener">Visit Luxembourg</a> lists other options in the city.</p>
+    </div>
+
+    <!-- ─────────── AROUND THE CITY ─────────── -->
+    <div class="sub" id="city">
+      <div class="subhead"><h3>Around the city</h3><span class="sh-note">Beyond the conference</span></div>
+      <p class="lede" style="font-size:1.06rem">Luxembourg City's old town and fortifications are a UNESCO World Heritage site, fifteen minutes from the venue by tram. The national tourist office site has opening times and events.</p>
+      <div class="hotel-actions" style="margin-top:22px">
+        <a class="btn btn-ink" href="https://www.visitluxembourg.com/" target="_blank" rel="noopener">Visit Luxembourg →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="organizers">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">04</span><h2>Organizers</h2></div>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Organizers</h2></div>
     <div class="org-grid">
       <div class="card">
         <h3>Local organizers</h3>
@@ -419,7 +701,7 @@
 
 <section id="hosts" style="background:var(--paper-2)">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Hosted &amp; supported by</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Hosted &amp; supported by</h2></div>
     <div class="logos">
       <a class="logo-plate" href="https://www.uni.lu" target="_blank" rel="noopener">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR0AAACqCAIAAAAfsAxVAABKb0lEQVR42u1dd3hVRdOf2T3n3H7TE0LvIL33IhZAwYYNC/bexS4W7N3X3gsqioggKKA0Aem9915Cer39nrM73x8nCUkIkARU5Du/532eN17O3btnd347s7OzM0hEYOHUAwGQlIwxIpi7ePmMuQvXbNiakZUbjUY0zZaanNCxdbOBZ/Y+s29PhiilREREPAX6TYQoheCcA8CuPfumz56/cMXa3fvTA34/IMbEeJs3qte/Z+fBZ/ernZIMAEIKxjgCAeBpM31o8epUJBURACDizL8Wvff5D2s2bNejEUVRFZUjoiQQhogawqZgpzbN7rllxKABfQCkJGT/NrUIQAhD4Upaevo7n37z66xFuQVFCmOKwhnnACCF0A1DSkhNThh+4Tl333JNjMdrCME5x9NoBi1enYqkQsSorj/9yntfjJvEuOJ2ORiilMWEQwBTOxGQPxA0hLzhygtfffJ+TdPM7/6LnRdCcM6nzl7w6PNvHMrI9npiFZURERGBKWmIDBEQ9ahR5Cts2bzx+y+P6ta+tShRcRavLPwtpCKiqK7fMvLZKTPmJScmEJGUsjIjiQCAMc4QsnLyhpzT96t3XrTbNFPR/Uukkpyz7ydNe/DpV1TN4bDbhGEcRbwIETlX/IGA3aaMee+VM3t2kVIyxixeWTj5MGXrvidfHDN+ekpKoq5Hjz+FQKqqpmfljbjs/I9eferfWviFlJyxuYuWXn3r4zaXnTGQ8vjfUjmGIoZN06Z9917L5k1OG2oxS5RPHQghGGM//fbHNz9PS0lKMvRI1bY0qOt6alLs2EnTv/vld865EOKfV7MMMTe/4NFn3wSNM8arQioAiAqw22w+n+/h596M6joAnh7LvMWrU8gCZIwV+v1vfvCVy+kSFKUq+8cI0BDkcbne/ejL/KIixtg/bIYISYj46bfjt+9LczkcUlaV2AhkCMMb4120Yu3E32YyhvIfXxQsXp3WykpKRJw6c96OvWlOu03K6hFDEjns2q79aZP/mIOIsor64iStCApneYVFE36b6fF4a6AtpRQ2m/Pbn6bohmHZgRZO6kwgAsD02QsZV2qmbUgSV7Q/5iwCAIb/3MyaS8DiFasOpGXZNLUGnZeSHA5t49adm7fv+ocXBYtXp78RWOT3b92xx2HTZI14JYjsNnXrjr0FhUXI/kmPFAHAqjUbhZQINfxRztAfCq/dsAVKju8sXlk4cV4BAGRk5eQWFCmc11BfAaqc5RX507Ny/knpNN36+w6mI+dUU14RMAK2d//B08T6sGT6FGEWAIRCYV03GKvh6RMjAagIPRoIBP7Jrpu88gXDHFHWOBYJJQMo8oeL3RkWryycLHDOEPFE1AwBckRFUf75zkvrHNTi1SkHRACIi411OZ1SyprGS6CUwuGwx8fHlbZpweLV/+NpQASilKSE+rUTIrpRs0AkhkzX9bq1klOTE6HEwWjB4tX/awgpFc57dW0fiYSxRl5yZBiOBHp0aacqijgtTlctXlk4cVOQAcClFwxyOeyyRpsVSeSwacMuHAT/XuitBYtXpxY4QylFuzNaXDT4zMLCgur6HhRFyS8sHHLugC5tW0kpTpvAcItXFk4UBEhEox64vW5qUiAU4byqs8M5C4UjtZPinh55BxERWMrK4pWFwyqLEVHtWskfvPosIoUiRhW0FipcjUR1kMYHr42uXztVkrSUlcUrC+XngzFDiH49Oo19/yWXQysoKOScc16Jbw8RzX8qKCqwa+qY918a0KuLEJIzbmkri1cWjtgpcS6EOKtP92ljPzy7T+fCoqLCIr8hiDHGOVM4VzhjjAkhiooCBYV5fXt1nDr2w3P79TKEqLrpaOHvnURrCE5Fg5BzIWTzxg3Gf/7O9Dl/jZs0ddX6LTn5PsMwpCRkoCo8Pja2T7eOV18yeOjAAQAghFROo/wQFq8s/E3UYlIKRDz/7H7nn90vMyt76669aRlZ4XDYZrfXqZXconGD1JRkKE6JAZamsnhloUpAxhGkEAYiT0lOSklOqvCAlIJKUsdYsHhloWq8AgBgpiIiIklUmufMTBfGmGX4WbyycCIcQ+RWCMV/B5ZRbsGCxSsLFixeWbBg8cqCBQsWryxYsHj194NO+Ot0Mp75r7yvhb9PTo7iZyciISUAsOJ6MOahvkRkjJ3oISQRSJJma+b1O/NwBgE4YzW8kEcgpSTAmoUdSCnNMPDK7q5TSQ/N0yOBgIgK+wfPYqUkSQIAzQ4SgXmaxZAx60i4RGJl8ZgglAgVkcTiQcOT0TgxRGQMAUsJcjSJVSppQkrOedlgMwQzCUmxyJrlWGrWRfO7HFk5VYnIyz9QbVYhmGXLSiuyVX3IiIAxxsz+kISKd+ARgBBLo8R5mXcRWDkVTyajAIgxxsrMFCJAyYCZqWH/P18MIQBZLFTlT8nLSaxgNa1bJyo0TiClZJyVEsSsVlFB5JRKmuA8v8i/cNnKZavX7953yO/3MYZxsbHNmjTq07V9zy7tVUU1FQxjCFUrX0kAJIkhcM4iur54xZqlK9dt27WvoKCAiDzemOYN6/bs2qF3985Ouw2ApIQqrsRmeZjvfp7yx5xFt4y4bECvblBS7aYqasrkxYKlK376dUZUF++/MkpTGFFxLiPzgSWr1o1+7f3EhMS4+JgGtVPPaNao1RlNG9ery4sLEErAkyvZZJbVKKkmijv27Ju/eOW6zdvTMzMj4Yhmd6QmJ3Zo1axfr67NGzc8Qbn5T3NKyuIw/3Akunj56kUr127fc6CosBCIvF5v04b1enRp17tbJ7fTWUYqqiKxVFzCiohzFtWNhctWL1y2csuOvXn5BUIIh8vZqE6trh1bn9WvZ52UlFI5rIRXQhicK0U+/6ffjP9x8vS9aVmm4jIlRghpyLnvq+yM5k1uvvbyay45HxlKIVmVdAsJKRXGhRRjJ0z9atykzTt2GlHkvPiukJRymhDvf/Vj88Z1b7zy4huuvtS8K1GVOk6mgjqUkfvjlBmzF628cujZrzw10uV0HJdaQuicq5k5uU+9+Pavcxb6/aHWzZtWSINsNl5QWLRw2Xq316PrUUnEOSZ4XC2aNh7Qr/vQc88slmwpGLKTlVVCEgEQ53zd5q3vff79vIVL84oCwLjCzASDJIT4fiLFeN1n9+p8zy0jOrY9Q0oBiIj/jxSXEIJzRTeMb378Zcz4Kdt2HzAMo1RipZRkyA+/GtuoYf0Rl114y9XD7Ha7IQWv2oJdzBOEH36Z+tm3Ezdt32kYhqKojHEzg/yiZWvHTpxeKyn+siHn3Hv7dUnxcWUltjiLt/nRklXrHnrm9U079nldDs2mHZasYtsDSGIwHAmHQ4P6dX/r+cfqpqZUhVqmiO89eGjk0y//uXi1zeFw2WyIzLTCytiZEA5FgsFgv56d333p8Yb16lSFWoYQCudvf/rty+9+HhefkJWRNaBXx28/fM3rcRuGUBRe6VokDENRlE079tx07xM79uyPTUjQw+EmDerPmvCJqqil+srswKy/Fl9755Ner0eSBAQiEgaFwlE9Go6PdZ3Tr9dt113euV3rE7SQy5umxBh79/Pv3v5oTFHE8LpcioIEBLLUxkEAMAT5/H6nXX3wtmsfuvNGKQQy9s9njDGLr156y8i/lqxye9xUo1RQXGH5eUU3Dr/4recersowmlOzY8/+B59+ecHyDU6n02HXGACViCwCAEMiCEcigUCwW7sWb7/4ZNuWzQwplOPFVZqkysjJG/n0y7//uVizO9x2OyACmQl9qLgSLaCuGwU+X9OGqW8/91j/nl1LJZaVdnH6nPlX3DJy18FDSQkxisqFMIQQQhZDCCkMElK67EpSfOzMBSsuvuG+HXv2Mc6OXf3BJNXm7bsuvP6++UvXJ8bHu2yqlGC2X9y4lEIIKQy7jSckJSxYuf6i6+/dsn0n57yKpSWISAgphZ6UnDB/xboRdz6Unp2rKJxIlvwMSUlCSl0IBFAUZfW6zVfeOnJPWmZCfDwJ3XzqqNvWkk4KQ0pBwMjtUhPjY4XkE6bOvXjEvQ8+9Up6ZjbnzBCCTlRZSQQY+dwbT732EVO0RK8TUBqGlAbJw9MhhBAcjPgYt6Jqz731yQOjXgJEkvL/QwFO05Jas2Hzxdfds2z1lqSEOKfGSBhlRVZIaf6nXVWTE+LWbt178Y33L1y+SmFcCHns8eeMHUg7dMmN9//+59KE+HiXXS2efWlOAZlTYAgduUxKiDuUmX/1HY9Omz2vtKgfM7u4ZNW620c+h6h6HXbDEKVapIKAIZCQoBsiMT5m38GMa+8dlZ2bi0dPsS+JEDE9K/uae0ZlZWTHx3oNw5ASAGSlzgdBaOh6Qow7LbtwxL1PpmdlI6KosqAQmF+PWbxm60XX3jFlxp8EoJiWAUPGkDOmch4Ihj76ZvwVtzyYX1DocTl0w6hOQnACICSQEnQhACku1qXYbF//PG3w8Num/DFH4RykQSRrLjGMP/f2J599N7FWUgIg6YKQACtz70pghpAMZHJS0ufjpz77xgeMc3m680pKiYztOXhoxD1PZhcF42KchmEUD1IFjxMBAkki3RAxbmckGLnx/mc279jJOTtaJjkiAgKf33fD/U/v3LE3MSG2RGKpMg87AjHDMFx2DRX7bY++uHTNBs65lIIBYpHP/8Azr+oENpVFRZUEQteNeK976459T73yAR6jOiARADz+4v/27kvzeL26YVSpccOI9Th37kt/9MV3wPQrVweGEB6POy2z4LaRz1147d3vfj52/uIVm7fv3rh1x6x5C19699NBw28d9ep7UVJsNtuJ568UQhJRYpw3u6jo5gefeeF/nyBTSvZI1W6KMTZz7qL3vhiXkphoGHpV2pAEwtBrJcV/+NWPU2f/xRkTQp7e1CIhHhn9RnpWbozTFjVkFaXC6bAVFIUefuaNSDR6NF0giRhjL/7v0xXrtsXHxei6XqXGJdlUJgxj5DOv+AIBBFQY4udjf9q8bU9KUoJuGIBVrWAUMURSnGfi9DlXDDvv7F7djtwLmZ/8/ufCqTPnJ8TFRg2jykoBDT2aGOv9fcZfv89ZcP7Zfatbi1oKYdMUm01bsX7bohXrbJqi2exAFApHDCHsDkd8TKyp0E9W6QrDEHZFtcfY3/rw60MZme++NEpljKrn8QfGIBSOvPTeFzZNBZJVTleGBIBS2OyO1977bEDvbk67jeD0zHVmSsLPU2fMWbA0MT7eqI6tEREy1utcvHLD9xOn33TVxaaj7ghjga3euOW7CdMT4zyR6jQuhOFxOTdu2fPl2J8fuP16ll9Y9OMvf3g9biEkAFarbDIBAtCXYydUemSEDAngy7ETGFckUTUrjqEkUlT+2Tc/CilrcPopiaQULqctPj7O6XIzxhjnHo87Pi7WoalCiJO9D0EpgYRITEr5ftLMe554UQAQGVU3YoUUiGzG3IUbt2xzOh2imjULDQkup33jtj3TZ89HPE2q9B4JM2HOFz9M1DRNyOplSkQAIYXDaf/mx18i0ShjvMLkmP/1zbhJ4WgEq31wgoYgj9szbuLUvMIiNm/Bkr3pOTZNg+pvCaQQTqdr+erN+9MOMVbOZpWSGLLde/atXL/F6XRS9StbSintTsfKDVs2bd2JyGpWG1NKKuuQMLebf98OhACEEU1OTBr/yx/PvPIuY2rVX9xcmKbOnAdMqWGMkpSoaFNnzoPTNI+0lBIRN23buX7LbofTQbIGhYzJbnds271/9fpNiCjLyDwRccYKi3x/LV3tdLpk9RsnIrtN3Xsoe9a8RWzR8tUgCQFqYDgQgKrw/IKiNes3Q3mL1dy4r1y3qcgfVDirmSBzzgLB8JIVq2u2Xfl3TH8AwwgnJiZ8MuansT//pnBeFdVhTmowGNi4dafdZqtxfna7Tdu8dbvPH2DH2PT+d7dVRACwYs2GcCDEGK9ZWl+OEI5Elq5aV0FiTQHbtG17Rlaupio1GzwCKQHmL1rBtu9NUzijmtavRAAhaefeNAA4so2d+9IkYY1rziJJYHzT9t3wX9stSCndMbHPvvb+9t17WBVOC8xZTM/KycotUGtaB1USqJzl5BcdyvxH66D+w9i1L40QkGosFMQY27nvUMXvEwHA3n2HIlFRY20vCTSFbdm1jxX6QsiQah4cTYiYX+Sr9C0LinwnZJAQMMYzs3PhvxYCR0Q2BQsC4dGvf1A1TUsA4A+EwlHjBEJpkSFEDFnkD8DpCQSA/EI/FIcj1WxqgDFWUBSo1Fou8gdP0JeqcJ6dX8gA5Em4YXG0vZkkBFnjNPwEwJCq6J0/1aALGev1zJy37I85f5m77aoKzgkZocVx3HA6XiMpCdo0WPFpFdWUmwDSAAAsM95UrCUITqRsBBEhM3Tdutf492otrqoffPmDIQyrFsF/RCHiic86kHVf+G/eZbmcrhXrN89fsgIRT/vjWgulsHj1d5suJCVNmDITrDraFq8snDyVJRxO14KV63PyCk5L37cFi1f/zh5LU5XMzOyVa9dDyfVeCxavLJwYrQAYkCGM5Ws2gpXqxeKVhZO1wyIghSubd+wBACvNi8UrCydriwWaqh5IzwrrYYbM2mFZvLJwcsA5Kyz0+XyhEtvQgsUrCye8yWKMRSLRUDAClUVRWrB4ZaEGtDKtQWlI3VJXFq8snHRYTguLVxYsWLB4ZcGCxSsLFixeWbBgweKVBQsWryxYsHhlwYIFi1cWLFi8smDB4pUFCxYsXlmwYPHKggWLVxYsWLB4ZcGCxSsLFixeWbBg8cqCBQsWryxYsHhlwYLFKwsWLFi8smDB4pUFCxavLFiwYPHKggWLVxYsWLyyYMGCxSsLFixeWbBg8cqCBQsWryxYsHhlwYLFKwsWLFi8smDB4pUFCxavLFiwYPHKggWLVxYsWLyyYMHilQULFixeWbBg8cqCBYtXFixYsHhlwcKpB8Uagv/3IJBERAgIaH5AAACMAaI1OhavLFSXUCSFQEVBVkwgWd6AIaEDMJNgpw7DsOR/Fq8snHqQEhhjiiJ0I7hldXjzZnFgn/T7SLVpSYla0+aOdp3UpFQCQEMCJ8BTZcuA+B9Qowrn3JKx/082HyAACYGci2gkd8pP4V9/Frt3QDjMASQHJiEkIaAwX3wK69Mv5qoRziatgCQQ0b8t0KZ9qmmapFOeV7Eej0HCjkCEAGRJ3ulNKiAgIVDhgc1r814fbWxYp9hsqs1BdjsAKgQAQAgcJAUL9ckTsmbPdt14U8L1dzLzi5z9qyYYAYDH6xJEDKQ4hYea1U6OA4MILVKd/kAgEpIUXjR/VsY9I2DrFi02HuwOIglCgDBIGiQNEAYICVxRYrwahP3vvp4x+hFphAmZpH9fSOokJzAQAHgqyytr1ri+qaosnP5bKkGoMP+qJdlPjXREAV1uKQyQ8mhWlxCCgKsJcfrknzLeeJ4xAvnvv0Wj+nUVjpJOadcFa9v6DFVTSFrUOu2tQEJEIzc/98WnbUIXmkpCP55+AwICXagJiZGJ4wom/sw4OyoP/wmPBQOAFk0bez0eQ4hTmlftWrVISYyPGoZ1WHH684ph7refsH07yOkGKaq+UxIkVJej8Kv39JwsQIR/yRpkDAGgfp3Uxg3rRaI6slNXYllifGzHti1DoTBjVuzF6WsBSgmMRdLTw9Mnck/ccTVVRSmREjUHZBwsnDIBEA1p/FubcSEE57xXt47hiI546rqyGQCcf04/koYlfKczhCQA34I/MT8LFV7dLT8BkpRcc4TmzTT0CGfKv+XlMl39Q87t57QpUspTmFdE5/bv1ahB3XAkipYpeHpagABMEkBkzWKGdgmiJr5yKdGmygO7o/v3ISLBv2UKMiLq3LZVl3Ytg8HgKWtkMSGl1+0efvF5QX+Qc/4f9bUjANKp7Xn9p4ahMk0igatk6OLgAVIVkFBDbcO4DEaiB3abu7WK/0jA/hHnt5SSMXbdVZdGDYMhIJyKWosBY0R00/BL69dLCUciyn9UNv8TvT7edh//xmlGGQqRP3BC0UiI3JBUUPA3DngVLCbOuCS6YOCZPdq38AUCjJ2KuyzGEaWkxPiYB++41ucPIdf+i7TSbOoJWiZExBgzPbkVBBwRT0jksVSX4IlL1fF+ihDRtI7KtIUEQCgIjRN5EwIgJhnJo1hoJ7oklxkhOvZzksimKo/ffzuJU/QYiwEA50wKOeLSiwf165Zf6FOU/1LEoDmqtWslMcZqvIoigEHkddsVzqnMKbm54Yz1ehRVIaqxvYFSSqfD7nG7StuslFFut8NmU2u+HUcEaWiaGuNxH/F+xG1O7nTRCez1kYgYojfWJHDZJQkAYrxuISXWlFxITBDExbqr8rDCmBSyf69u1115QU5egaoopyKvilU8xzeee6hWfEwoHPkP+dxNMW3ZtJHL6RSihpPKEIVuNGpQFwBk2aBORACoX7d2fIzLEKJm6gQRdN1ITUlKiPUSEVZGfrPh1OSklMQ43TBq5kBCAN2QSfGxdVKSyhEYpRQCVBtLbUiGXlOtiCAF2T1K/cYAQGUkxORVs0b1hJQ11ocEkjFq3qhBVXvDUEr5zMN3dmzdqtDnV06x8HFWqsQNQQ3q1Png9SdJGELIf4RaiICIDKDm0ZzIGBA1a9ygWeP64UiE1eiskAARqEfXDhWMEIZIJJMTE1o2bRgJhxF5DfqJjEWierf2rRnjQspKxRoRhZQOu6N96xahiF6zwWcMghGjQ6vmTqdDSomHjSpESQzA0bELCYHIsZqKnQCAIUUNVq+u1qAhkcSyF7UQAaB7lw42Va3ZyoYAhhCxMe5O7dsWz2kV1lMC8Lrcn771TEKMKxiOsH+GWoiI7LjyevgFFM6EEAN6dX//lSfDobAQxP82aiEi5xwZCJCG0Akk44wpvAbrNAIIKVRFvfi8MyPhYA12sYgY1fXatRLO7tMdACrItJASAYYOOls3dM6q7X1CICnJrvGLBp1pEvVoM2I6NS467yys+UYRgeRFg8+u4CJBQKZwBHD2P5diY0kYBLya7SIyhFDI3vcsrtlBiLIvwZARUdeObVs2qR8O12RpY5wHAqHuHVs3aVBHSsmqJgacMSFli8YNvnrvJZvGQ+HI36e1TIlliFIYuh7VJQJyhR9VYsvJEOdcGMalQwZ+/PpTwgiHI9G/Y6/FOY9G9bz8glAgaGPc7XBwNHyFRYV5RULIGtwHY4wT0VXDhtavmxoOR1g1yalw7vP5rrz4/OSEeCFEhZHijBPRpUPObdaofiAU5dVsnHPFVxTo37trl47tTAfx0Z9kkuTZfbp3bX+GLxCs7qLGGAsEQp3bNjt3QG8i4pxVUJogpa1OPdu5F5IvHxVWrZULEDBq6CnJsRdfJUlC+UAHRJBSOmy2G68aFgrW0EGHIG4bMby6jkbOmBCiZ+cOP3z8WozLVhQIKn/DXotzHtX1vIKCUCjqdLgSErxehxIJh3PzCyPRKOccj80rAOCKIgwxbMg533/yekKsNy/fp3CFI8iT4XVhiIgsr6AotVbiQ3eM+OnzN2b9/NmciV/8Pv7zr99/8borhzjsSn6Rj3GlWgltEFFKmRgX++h9t/oCPs6r4cBQOPcFgi2aNLj7xqsl0ZFyj4hE5HW7Hr/v1kAwJCsbxKP1iyMahnA61KcevOP4vkAAItJU9amH7gQpJFU9/A3Ny7wk9CdH3mVT1cpvcyAiUdxNd1JqfQqHgCOrQqw1EhAw5GrUXxRz3e22WqlMSuDsSIUjpbzq0iF9unXML/SpCq/yFJCmKjl5+ZddMGhA725SyuouKJxzk1qTxrx/RpOG2bn5nDN+4t5JAABCJMZYfkFBalLiw7ePmPTVW3N//mz+pG/mTPzylzH/e/LeGxrUTskvKBLIzBiW0quffPTo0UeufEKIRvXrDh3Uf/+BtPWbdgBDTbMhVTJdjGEoHOnWsfVZfbpTGbk0/541f8majVsddjsRIeOGlHo4eP9tV7//0pODzuzdoF6d2Bivx+1KjItr3rjh4AF9hp7bPzcvb+2GTQ67zdx4R3S9QZ1aV1503lE9aYf7LNu3ap6dmzd/yZpYr7MqN4UUzqJRg5B99+7oJo0aUmW8KuatkK1aNCn0F85bsMLrcVMVGucMBKr5hQWvPztyYL9ex1ZWpQaVkLJh3do2jU+b9ZfL7a6KdDJExpWsnLxRD9529SXnC2kwxivdw5GUzONVGzTzz/hVAU4qP/aRGhJKhqAhZOeoQ4Yl3vMYkkCu4FEWBVVRenRqM3nGXJ8/4LRpogrXem2KklsYaNOi8RdvjbZpNsSa3LI3Zz8lMX7Y0HMKCgpXrd1sCGm32wDhyJliDCORaNOG9S4dci7QYaEyV9WV6zbNXrDc6bBJImRMAgsF/HfccNkHrz41eECfenVqedwuu83mdrvqpqb07tbpiosGawpfsnw1oqYyJCIiUFWlEl6ZHTWEjPN6hg05p36d5M3bd6cdygJETdNYGfOZABljVeCVjXMeiUZBRD98/Znbrr3CYbcZwqDDWwsppZQkEuLiLhw4gCls1vyFdruLMwxHo1XhVbH0kzynb49DGRmLV65zOlycsxK5wQp2DUPkilLkD2qcffH2s/16dRfHXikRJNHZfXpk5eYuXLbaYbdzfqRQFh/AIIKiKNFI2Bfwv/jo3bdde7kQglftpi1DNITo2aWjJDn7r8WqqmpH6B+C4gM184cMQ+Tn54+8fcST999qCMmLTdVKvfmMhGFv2EjUaxiaN5MbQbA5zVvEZptY4qVAAAQEhRMQZOfjwAtqPfMa1xRAdrRZMK2G+Pi4Hp3bzpzzV3a+z+l0wGHBxiNNOMZ4dl5B22YNv/vo1dTkpONO8TGphUJKh802+Kw+7Vs137V794596VJKTdP4ERJ7bF7NWbDM6bAhY7owIsHAG88+8uDt1zsddkMY5ffDJKV02G19undq2aTh1JlzdEJNVYQQqqpVziuzo1ISALVt1eKKiwYnxcekZaQfSs8KhKKIXOGcc8Y4qpyFI+FuHdsM6F0Jr2YvWLp28y6ny15QUOB12j97+4UhZ/fTDYMhMsYZHgZjHBknKSVRn66dbHbnjLkLVUUBYvXr1rriwkFV4BUgAGdsyDn9FYZLVq4LBII2VVEUzhgC48gYY6gwQIRINFJU6G/TqvHX7zzft0cXISTn7DhOIABEPO+svm6nbcnKdYVFfk1TFVXhyMyWkSHjCIi6rhcUFaYkxb/zwuPXX3GRlILzajgSkTGSsn/PLrVTUxavXJObm2/+DmMMGEOGCkPOGGOoG7KosNDrcr705P0P3D5CSMk5w2NkK0JgDElIV7OWSvvOgQ0bMW0/Z4CqyhgSA2AMmPlCCBKk3y+B2264vdZjoxWbDYEQjzNKQhh1U2sNOrPP5h07tm3fCwCqxjljyBgWTwFwhgAUCIZCwdBF5/X/6p3na6ckC3miLmiGprqQTRs3uOKSIQ3rpuZkZx04lFEUCCMyXiKxnHNdN5o1qnfJ+efQEbxavX7z3MUrnS5XYWGhprD3Xn7yqkvONwwDETnjWB5msKIQomWzxi2aN5o+e344FLI57DaNHZVXxcKEKIRw2O1dO7a9etiQTm1bOO1aIBgoKCz0+QLBUDisR/MLCrt2aDOwf68jefXrH/MWLl6pcOjXrf3n77zQo2M7IXSuqEcoeyxZ7c1flL27tGtaP3XxqvX70w7WT0265rILq7KYmb5XIurTo/OZvTrn+/x707LyC4tCobAejUSikVAoHAiFDUmNG9R/4Lar3hr9SP06tc2rB1U8KAOS3Tt3GHhmz1AouP9gem5+UTAYjkT1SFQPh8PBYDiqi9Sk+OsvG/reS092bd+2io0fofVQStGhdcsLB54phbE/LT07ryAQikYj0WhUD4cjwVAoHDUSYmKuuOCcd195ckDv7lLorDIL7YhTMkTGpGHY6tb3DL5A98REMg7JnBwI+DGqCxFl4TCFQ3o0Qk4773t2/JPPxQ69FIEhVCklE2MohEhIiLvyosG1U5MOZmSnZeX6/IFIJBKNRiKRSDAUCYbCqKhd27d+8fG7Hr37ZqfDUYNt1dEllgkpVUVp16r5NZcO7dG5XazHFQwFCwuLfL5AMBAO6ZHCQn+j+qlXXnTekbxauHz1L9P+VBXWs+MZn7z53Fl9egijWGKP9ouMMcOItmjSuF/3Tms2bN2x7xAKgVXYKpAkkFKWOjEDodDOPfu27dyzZ39aZk5hWkbG4AG9brzykrJbCPPvz8dO2LB5+7DzzzqzT08AMKRQquQsIiElZzw9K2fMjxOlpFEP3FGtdEBSCPM0Y9e+A0tWrN24bVdWTq4whMfraVyvdpf2rbt1bGu320r7Wa29rBCCcwUADqalL1m9fsOWnRkZmeFo1OF0Nayd3KFNy25d2ifExgKAkIKfQPRa6dczc/KWrVq3dtPWg4cyw+GQ3e6qk5rcsXXz7p3apCQnmwNbYu1UaYgkEEhpOu6MgD+4fkV402aZto+CRcBsmJSoNmvpbt9Vq98QAcgwgDOsRmQhSSkYYwDMEGLVuk0r1mzcsfdAYWERMoyPjW3RtEH3Tu3bt2pubgH+hsxlRIRCilJPXVTXd+3dv23nnl17D6bn5B/KyG7fsslj995cVqhMSZg1b+GsuYvOP6df/749sXhgq+SpMhfQSCQ6adqsdZu2VIVXZQ1KAqCapUaTkqp1siFObA0zo4GOwRkhBGOsZjNqjsPf1Hi5HyIiScewUaWUgMhq9kNERBKPwXySQAA1mgUCkMfR1STk33hGavaBpCSqscRWb80t+3w1eFVuOkyUMd4qlSFzbweINRs+8+ulgaQ1I4AZ12d2jwjIjEzFk7BGFr9daeMlx7EnhVHH+CEo8QacnB8yZ7KsOWDOLMMTz8VJBERSEuHhKSAyfZj/YKyc2Y0qSqwZjcV4TSJ3Ds8UkZXezIKFkwwrp4UFCxavLFiweGXBgsUrCxYsWLyyYMHilQULFq8sWLBg8cqCBYtXFixYvLJgwYLFKwsWLF5ZsGDxqno4xYN6icCKOrbwd0ARUkpJiMAru3RgCAEACMQ4w2qQkEruqzEp5amZPbe0YzW42kiSBBEAcVatC3+lg0NCSgIovph+Im9hXkwg4AyqkC7yPwZzoAAAERhj+N95u6reEyGgKr8VmRWXAMAfCrkdjlNzwhBR1w1AUhW19N5o6R2qY9xrMnOsnJCWLPP9at2DrspLna4aoDoS+O+DX3jp8Nnzl6zftDXW646N8ZaZGxKSfps1b8mqDQcOHGzSsF4Vr5Sbl8fyCorueOSZ59/+NBIJ9+jckeAUmnLzruSCZauuvevRbyf81qJZk3q1U8wXL730dvTvCsbY1l37fps9f9PmrfXrptrNLG5VezuzqMKhzOzJf8xdvWGLFEZqSjLUKA8RESHC7v1pU2bMW7tpq8JZclJC2QRD/3VNhYiHMrMn/fHn2o1bDT1aJyWZ4L/zdo+9+La9XletTocfJ08jIt0wzDuPRBQMh9udeZFSp3PL3kMK/f7Sz48Ns4Vvf/rF0aBLgy7n1Wl/9v6Dh4otn1MDUggiuuj6u+Nb9ott0feK2x4iImEYRBQMhQ9lZmdk5USi0Uq/K4SQJC++/m6IP2Po1bcGQmFZnfcyDEFEU2fNszfozGq3f/CZV4jIMIwavIU5zmPG/6LUaafUbv/yu5/XuKlTEOZAzZi70Byoe5948b/1dszpsMXHxcbHxalaJZWvYryexPi4mBgvHsPmK29ImunFU2ul2mxqTl5e7ZRYj9tJNS1TRH+LRQEA0LhenWAwEAkFGtevAwCGkAAw7pfpPc67utcFIxYtXwMAQsgjt2TfTfj11xnzW7Zq9sEbzzvttmr4ZkoeVFU1Li4uPj7O6XSe4LtomhYfFxcfH2ez2f5VI+1vaUFVlPi42MT4OKfTXmpEn3oGamV+CylJCCGlqFQ+hJCGEEKIsoZQMX0QSUrOGSCaazbjHAE4Z0R0Tt9uX749esW6TVddcn5sTAwRAUlJZjbJUkOLzNpQ5t+Ih5OfC3MvbmaaI5JSMlZsppW6DiQBEDBWvEU00+4xZpZEBSkJSCJjZlq5smk2EJFIPvPwXbVr1WIcb77mMiAJCELKYDBc6AsoKg+Ho1JKKQRjZqqH0gERBw6mDx149i3XXNygdq2IrttU9bj7KSkMxrmZhk0IIYmEEEKI0ncnIpIESICsbBIYkmbqFmDHyMcgRFX2yaZWRQJkUNbXIksKE5mDQ8XPAZZPR2N6RwAIi/1bRIBERFKWeryEEIDIyqcHkubahGbC3eIcOFJIQuCMlZ1cIhBSlk13br6dIaQglFJKKTnnQCCkOOJ3StxlZRKiCCmhRCzLyxuZ+d6wnCuqOPtFSSE180kJwIpFnRWX2i0dFkNKLBk3IeRhoQZQqklLLJfVnnMJpBuGzUw2T5KQldjAOGzIwGFDBha/DSJgpfmiKvHFlWaTI5KGEKqimvl0ZDFtAAAQD6efKhU4PJxlzcwQxksYi2YLJGWxWBDGxsQ8fPeNpb+pqSoA2B02zpnKucNlZ4wxjZW8+eHkQaMevKO0qzZVlSTZ0V2CRIRIXFEAwDB0rigIzGRY6WhIAI5YyfAQIEN+kjbr7HBC2/Kflxt/iWXcbofdOVR+mgjMZUhhDDgHgIhhaIpSMk0GssNyxcomk+IoiUgWJ4ozc4Px4hZ0m6JWWhCEAIEkY4wxpht6eXlgZRcOVjLRQhRn0iymDGDpkFfugC27iJR4SMxUbaWiDiX1m02BkGQoTAEAQxiM8Qo5s5QqswoBQEjxwpsfbN+T1qBO8u03XDXm+5+Xrt2k69HkhLhLhg664sLBRJIIOcMDhzKeffWdwkC4d+c2I++6JRAKP/7CG7n5PgXgucfvbdSgnjkoQohRr7ydnpmrMPbIXTe2bNHU/PzPRct+nvLH7v1puiFivJ4u7c+4YfgltVOSi41Xxmb8ufC7nycT4YO3X0eMvf3JNznZue3atHzhsfscNpUzvmX7rvFT/tiyc68/ELTbbI3rpV44eEDfHl3M1Y5zPnn6rLGTflMA77r5mn49u61Zv/mDr74/mJHtcNgR8Z1Pvpvwy+/BcPiRe29p1bSRYQhFUdIys8eMm7h8zcbCooDNpjWpn3rZhYPO6tPzaJ56Uy4j0chXP/46Z/7igkKfomqXXjgwNTmBI0RLFAxnfNuO3a998HlYN87t2/3Gqy4rTdL24y9Tp86cr6n8obtubt2yWXVzxZUqf87Y+MlTf50xX1GVB2+7vkOblmafdcN49o33D+w/WLd2yujHH9QU5YU3P9q596DK5ch7bm3dvElpT76d8Ous+YulIfr37nzbiOGGIRWF7z14aMy4X9Zs2OILhBw2rXGDuldccn7fbh2lFKbizczJG/3ah4VFRb26dTjvnP7vff7tlh37hGE0qF/nlmsv7dW5fVEg+NX3Py9YvDy/KORx2gef3fuWay9XOC9T1RZBCpum/rV89fuff5eTX+iwaR1aNb/1uuGN6tUuHXmzlGQgFP5h4m9zF63IzslHhDq1Ei8YOGDY0IHFZ5UgGbJ3Px2zbO0mj9sx+qG7U2ulmC1k5xU8//q7eUWBzm1ajLzrZgD0B4PPvvpeelbuGc0a3nf79R989u2SVesJ4Il7b+7To6shDIUrM+Yt+WHibwfSsxSFtWpS/8Zrr5g8ddauvQc9bleV9RWZLmj5+9xF67burZ2cMHfputVr1ymq5nQ4uKJNnb1o3ebtLz1+nxQ6MLWwyDdt9uJ8fxgBRgI47LbMvMKpMxeDHu3Zs/Od112pC2FjbNvuA1+O+y2sywSv88VRD5q65bn/ffLeZ2OJMKrrIKWqqn8uWjV+0tQxH7zese0ZumFojG3asWvcr3PcLicirt209VBmHhEV+PxmqabxU2Y8Mvq1/EA0Go4wIEmo2W1jxk++6+arRz90lyTiAJu2754yYxFnbOA5Z/brCTv3H/jq6wmJdVI9HicRzFm4LBLVdb9v+CXnt2raSFGU5avW3vTgM2mZOVKKqCE546vWbR4/ZdbDd13/xP23SSkq1KeRREBU6A/e8sCoWfMW2x2uUDgY1Y3lqze2bNbA7nL48wtLKrbhoazsCVPnhnXd43TfeNVl5mADwKr1W36cOlfT+BXDhrZu2azEVKm+Zx9g1YatP06dqyn8sgsGdmjTUhIxAEMYv/+5eOP2PS0a1XviwbttqtqqdbNXP/4akafn5E/+5gOGqCjK2k3bnnzxLV9Y2BU+8q4biUhR+J+LV9z58OisvHxdgGEYCudL1278Ycq0Zx+6676brzWEwbhSWOT7efqscDiyaeeeL8ZNXrdxm8Np97g8azbv/OPPBZ+88eykqTO+GT/F7nA6bC6Hnc9esGTzjj3vvfQElNRMEFK43c4Zf638/pcZaWmHNE2z2R3LVq6bPP3Pbz9+rUu71sI0/BD3HTx08/2Pr9ywCxGj0Sgg2jRt8u/zps9d/P5Lj9s0jYiAw7wlq6f9udjrcd132/WptVLMcfD7/ZP+mJ+Z5y8o8o2862YECEcik2fMP5SRu3X3gXVbd8/8c4HHG5uTVzDi8gsBQOHK6x+OefndzzRNjegiHDXmLFo9Y/6yYChc6A/aqluYFRHdbndSXAwi7tqz/4oLBjeuV3v5+k0btu2rVSv10zE/nHdW777dOgMAV3hMjBe44nK5TNEZftF5CxauZNy5YNnqO6+70pSOhctXI4DLoQ45p29qciIAfP/L1Dc/+DouPkFT8Ow+XWNi45atXrd7z8GDucEHnnp52rjPHHYbADjsWpzHk5AQM3fx6mAkGuNxFfkCbVs2c9psuw+kjXrpLUNig1rxF593ZvPGjTKysn+ZNjs9t+i9z8Z2bd9m6Ln9AcBps8XFuDljZoPNGzV44L4bdu47tHr9VsZw6Dn96tdJDYZDjerVBoDM3PzbHnkhp8Dvcbrat2reoXXzfenpC5aslMzxxodfd2p7xqCz+lZI8i6JFMbeeP/zGfMWJ6XUIj16weD+MR73nPlLt+89FOt1lk1Pq6pqXIw3ohuu8p4Mp8MRH+NWNUVTT7Ssk9NhS4hxqwpXy24IEWPdrvgYb4zHrXBGRJedf+7a2zd/PnbysrVb3/n8u0fvuikUDj/2/BuSaTYl8vrohzq3a0Uk9x/KuOfhZ4oChtfp6ty2RasWTfftP7hwxTrB+Qtvftip7Rl9TDFgLMbjifF6svIKnDblwduGA+HMuUt9YR1Q3vPEy/5g+MIhg1o3a7huw9bVm3bUqVNn3KRpwy8Z3Ltr51Kdr6jKoUOHANl1w4fFe9xzFi/Nzi3KKwrcP+rlP378zO10EkA4qt/z2OiVm/d6PJ5ayXF9e3TVI6E/F6wIhPUff5memhz3wmP3G4YOwN0uV3yM1+1xK/zwkCoMY70ewyCPy1VqGHo9TiGpsNA3b9EKp8ulKiwpztn6jGYAMGv+4lff/SwuIT4aCvXs2LrNGc1379k7b8kau9OVEBercKz2bJkuCn8g+OBtV4964HYACEaiN9z7+KLla4lpcxYsNXlFxVtzWVqFum+3DskJMdmF4fWbtmbl5iUnxAPAgiUrgXEyIuf07QEAgXDk8+9+cns8JPX/Pf/0Bef2A4BCn+/WB0YtWL15w459M+cvHnbe2abUCimEkEB08/ALrrxoMFMUl90GAKvXb/IHw0LCfbdec9uIK81f79e7x2U33qfr+ux5C01eSSIhJJQogDZnNPvfC09++cMvi5avVRTlrhuu7Nujc+lbT5g8bf+hTIddG3Rm9/dfe8auaQAwZvzkp15+T9McX46bMuisvuU2IEQKYxnZ2ROnzU6Ijw8FAx++9PiwIecCwKZtOy6/ZWQ4Uq6iGFX0ZBwebSEkE/LEI8KkJCGk6cWpYCWaPwwleeEfvefWvxav3rH34Hufjx1y7pmz5/21fO0WzaYN7N/j+ssv1HVdVdVvJ/yWkeez2WwXDzn3rdGPmPuiD74e99I7nxJ3jvlhkskrAhBSSimdKv/2/Zd7d+0EAEtWr7vmjkeRcV8wNGLYee+8+Lh5Rn/dvU/MW7IaUVmycn0pr8wcnkIPj3703juuHw4A+9Iyht14f26+b+v2vdNmzh9+yfkIMGPuwoWrN7td7mb1Ur7/5A3zVHDNxm3X3vWYjIv7YdK0m665rFHdOiVDKoQo56gjACFkWXE1XRFSSt0wWjSu99Cd17do0igUDjesVxcAvvlpiqo5QgHfFRcNeue5x01b9KlX3/3k25+9Ho8QVO0gGkQ0hBEf67n1msuAIByOOG3aLVcPE7rBkOcXFFX6LcMQSQkJXTu1ixpGVk7B8tUbACAzJ3f1ph0KY7WSk/r06AQAO/fu33cwU+h6/x6dTFIBQIzHM+qhu0EKBFyyfM3hPTBjvkDo3DN7vfnsI107tO3c5oyWTRsDAOeKIcFmty9ZvmbHnv2mQdWjU7vJ3344/YeP77t1RKUF53XdEEJEImHT8RYIhoQQ0ahuutoXLl/LFUXh7JlH7rGXHEjccOXF7Vs3l9LYunNXdl4+IiudKtPHtnLd5txCXyga6dul3bAh5wohItFo6xbNhg0+u8gfOHYFk3/vQBa8Lufrz4xEEBLYDfeO+uTbSXaHM8HremXUg+bmlgiWrlzPFcXlsD3z8F2lzoZ7bryqRZOGIMW6bXuK/EGzNcZYKBRu06p5766dDMMwjGjPTu27dGrj8wdsinrjVRcjYjAUVlXlmkvONwwDEAqK/GXdLeFItHGDBjddc7mUMhyJNqhT67ZrL/P5/VxRFq5cZz42Z+EyhSnRUOje20akpiRHotGoHu3YpsVVFw8KhENF/uC8xSuqLeqAQMQV5YPXnx02ZGDrls26dGjrcTp8wdDWXfu5gl6X8+G7b2aMhSMRALjz+uFxXrchBGD19RUCSCmddoemqYCgqAoRud0uRdX0qI7HCIkDGDSgz5SZ84lg3sKlQ8/tv2LNhqycXCapa6d2SQnxAJCTnRcKRxRVKQoEv/phkiQByDhCZm6B2+0u8gXT0jPKMdww+vXqah6SKpwTAEfs1bVD/VoJezMLZy5YuXT1XR3atOjdrcOAPj26tG9dTHIhWGXrBee81AHNGDM9S2Z50uy8QkDmdDgnTZ/tcTklmGUMMSrBZrf5AsGMzJyk+Lgy8VAEAAfTMkiCIfUundqalFM4l0RtWrcEPEUDfk1nUo/O7e+5cfhbn/+QmZPPGUo9/OwjD9Wrk2oYuqKo4XAkLy+fIdrttnGTprvsmgQAkmYJdrtNLSz0ZWbneN31qXhbTpqqERHjDAiJyOV0SilUh0vTNAJQVYWIbDYb58zQjQpuzGgk3LxpY03hUkrzyc4dWjvsNt0wSuXhYFomArhdjpbNmxKZsWlSSmrfpiVDRhL27N5fAxdqJKK3aF6v7RnNzCMEIlI4LygsDAQChmHUr9eodnISEWmaBgBxsTGJiQn7DqTbVFWBY80wHTNY6bBESqJjnw2ahzJ9e3ZOSYrNzvEtW7WWABavWCOFYAiDzupTIvGGFNLtcS9auW7azAVonjETcM5ivB5/IJyelSuBGKApuYigIpnnFaVBtCkJ8V+889IDT726eefejHD497+W/bFwhffTsV3btnj0nlu7dWxbXZvKtBw4w1Ak+sjot0TxMRwRgcvptNmcgfzCQp/vyPEKBMNAjKMRF+MqPQxgiB63XWUQFf/QOXh1jzUZY0LKR+655dcZc9Oz80OhaL+eXa+8aLAQRqmDW0jiiuLzB0Y+/aqQDFCYVcM9bpeiaP6A3+/3lW2eSGKJCVryB5r/aq5DJWWQKlvKSXjcDjONvHn46XU5bJoWNUQ4FDKfCYXCAGDXVKddQ0QzDz9j6HI4FMZ0CYFgsAYDQwAKEkjJOacSsTcMQxgGEThtmsIYESEQmA5QZFTiZ0diAFIAlWVLyUsiAzAPCY+jxI5nPTIpRa2kxC4d2v06a9GBjMxVGzav27QDAJIT48/s3rlkb23nXI1Gwq2aNGo9uLGEkirahEKIcDja5owmUN4lVn4iCBmTJDu1azVrwmfTZv41be7C1es3pWfmhkPR+YvXrVz9wA+fv9Wzc/uqRTkWH2ZwrtjtmhDSpinXXnaepqpknosDGIaQhFLqtVISocyJYfFu2KYBSiAMRw5b80QUiUSlJMJydZDJXMnLnPASkUR+8kLUEYAAZdkGiZCQVRxEIs7YtFnz0tKzNZsd7Wz95m1rN23r0LqFkIIjqKpis9kMIWI8nuuuuEDhChUHW4MwDCkBGUuIjy9ztFjyfyUHNkfpIMERRfEkAgBGolHE4vJmABgxDEMYQKCqWkncCSOAqCD9sLojIooYuiCSQJpdOxwhBMSonNhKQAJeyXCBaZccdvkDcIUVn7kZQkgihkDSXFUElsydkhjrYSB1gl3708x6e2Y5XUXhufmF2Xn5KiOPy+Ww2084kBIAYPCZvab+MR/I/u6n3x04lCGE7N6pTVJigmEYiqKkJMV7nVpOYVHblo0+eu3ZyrdqZm2ro5X5AiCAcCTCFXXYBQOHXTAwKydv6aq1X/80Ze3GHUVF/o+//rFXlw7HNaw5Z+buFhA447US44QQKI3Xn300MS72GJvPw6Y5QN2URIYEyLfvOYCI5vE/53z3gXRDli/WQQhoholIcxYAgHNewSg6tlI1hJBCHH2NIAQmJZIk0x2CAAxBGEbxqJU5c8vIzn7q5XcMUFAIBUROYeSx59+c/O2HmsqkJFVVUxK9m7cKxvk7Lz/ptjuOOyAnIDhSVfj+tMxSV5Omsr0HM0LhMCNISUown6qbmkKwyR8IpmVmN2lQzzCM4qHed1AKnQHWq5NaVkrMaFXTVWSefAspqtBZBAC322232zkPpGfl+IMht8NuGIIrEIjoBT6/whkBsZ7dOtkUxeFyfz9h8u79B2yajTOmqgoivvvJmCJfUBeifZvmCleq9sNH7xFjANC/V5fkxHiJbO7ilf5QBBEHDehb2uOG9erUqZ2s2BxzFyzfvH33YaeCEI8++8r8pSvNmImjHoAKAQDfjJ/S94Lr+51/zYKlq0x9eOGgsz5781kkqWpKXn6eLD0eqvSkB1FIcSgzi3OuaZrZsa4dWgNQbiD62bc/lX3+x8nTnn/7I7M+Mh0hT+1aN3c6HXa748/5iw5lZGqqqmlaOBz+7ffZDoeT5GEOKCoHAofDtnbdhkgkommqpqmhSHjpipUOu10e/ZVLyeBwOBTONU3jR0BRuHnkYnbrr8UrGGM2TeWcr1y9/mBauqbZynhcJCI+9fK7Gbn+aCh0+3WX33b95SD01es3vfPpV5wphq4DQMe2rSSwvJzcL8dOLNuTb8ZPefOjr0rn4iSYqZIcDueGLdsXr1yrcG7TVET4cdJUxlUh9C4d2piP9ejaiaTBAL7/6VdENIc6EApNmPy7ze5waEqPzh1L4z8456FgYPHSFZxzcxzmLVzq8/k458feI5gWbKzXUzc1BZGlZ2R+NW4iY0zTVM7YlGmzM7NzVVUFIqVTuzMGDej9468zONKVNz8wYviwlo0bFgX8v/3+56xFq1SbXeXypqsvLW30aLWDjvy8wiemDzc1OblrpzbT5vwVFxMbieqpyXH9enQx3QNCCE3Vrhg25LHRbwW1hJvvfeLGay9t2rhhQWHh+F+mzlq46rtJv3/7/ivn9O9VEm5W8T6OOSQup2PD1h2xsbEvvf3x6EfvbtSwfpEv8PnYiRIwEg43qFfP1OuIFa6EIADY7SoIwxMX97/PxqZnZCYnJ142dLDH5bzk/IHvfzHOFxaffTcxv6Dw7H49NEVdtGz1mJ9/S8/MTc/K+fCVp8perGIMpZTNGjbo1aXdzHnLCei6ux+9/YarXU7Hdz9N2brrQIzXGwgFSktCNWlYL9btCERhz8HMG+55/JorLpYkv53w65ZdB2K83ogvcmxHksPh/GvZGkZGVBwO9TL3LDJqXDL03AZ1a7dp2UzXI3HJtX745Xe7TevdreP+9MwPvvheIi9bnEpRlHFTfp8y4y+HZmvUpP7Dd14PCH/MWbxtz8GPx0w4q2/P7h3bE9EVF5732XeTSMJ7n36flZPXv2cXhjh30bIfJv6RmZuXk5v76tOPHE0w4OgVqCr5HAEYI8AHRr167+3XJMXF/DJ19tzFazRNtbviLhjY39TH55/T/51Pv0nLKpjx56LbH37mgvPOjkb0b36cvGt/ZigYGTygR4dWLcwTgtYtmvz2x7zEpJQ3PvwqGA63bNp4/badH3/9o9PhDIVCxxBg8zOzWvTwiwf9uWhFSq2U/300Ztfu/e1bNd+178APv8y0OxxEkpApQPDSqPsOHExbsnpTKBR95vWPzZreBIBMcUj/2y883qYkvEiQNAxDN4RuGFR+vTRMlKxSpo9ON0TpJwggCBjAoAE9p0yfbUgo8PkG9OybkpxgNs4Yk1LeNPyS5cvXTJg+LxwOP/HSe6qmGYZOEgBYk/p169atbXJbSKkbBiCU1RMK55LkRYPPunLoOZNmLlixfvslNz2UkBAfDIbyCwtJytrJcXfffLX5c1JIwzAkY8WhOogA0KNzO01Tff5QJBJ54Z0vnQ77uX17eVzO2rWSXx71wB2PvhgF9sW4qd9OmMoBgjrZOMa4HW1btcTKrhUS0TMP3bVm4+bM3MDmHQfveuwlIghHo0kJsYYR0Q3DXNR1w0hOiL/juisef+WD+Pj4uUvWzl60OqpHBECd5KRQOGrejzia+ReJ6F43/3PBkt9nzSu3dwJgnAd8wTatWzSoW3vQgD5n9ew4a+Ga+LjYD74e/9E3P/v8gZgYr9dlK/AFdEOYmmrn3v2jX3lfVTVD6q8/O9KMKn7tmYcuu+m+YAQeevb1ad9/6nE5mjaq//wjdzz47FuKon00ZsJn3/+CBLoeVbga73W3btXCHI3DYmCICsZ8sRSVeS9JpBuGKC9FhmFEI1GHw7Fz36F7Hn9J02ySuKYyX37+y688XTslWUgBgAkxnjdHP3LDPY8HwsaEafN//n0eIwmo6obRsmGtl558EBGQMSK67vILJv06Y/u+zBi3Y/RbnzHGivyB5MR4m6qG9cP9JIBKe845l1IOv/j8VWs3fvnjFLtmHzN+qpQyHNVr105y2bVQKMoZKACQFB//89fvf/j1uKkz5h7KzguHg9yuxnq8HVo3u/fWa7q0byulQOTmwhAb443zehJi3GbYjjmNiqbFxnhsEaP0uJorSnysl3Me63KWPXECgAG9u7Vo2iAQlSBdQwefU7oBMIXSpiqfvP1CmzO+GT91TlZ2bjQacTntiQkJg/p1e+iumxPiYgxDZ4y57faEWA8BOBxa2R0oAto07dP/vdDp2x9//WPuwYysgvxcRVGb1K/TpX2LB++8uUXjBrphMMbcTntcrJcz5nI4TA1DRK2aN/34jWc/+npcVlau1+X2uJ2qakaI6sOGnBsXH/fux19u3bk/GIhIBrXiHG2aNbrvlhH9enWtGJkKwBiTklo2bTTxy3efe/3D1Zu2RyIAgBcN6tenZ9e3PvwyPsbjdjrNYZFS3nf7dW6387Pvf87OLiCSdrvntuuvLPIFvx43OSk+xq7ZKjiIzD8dDlt8nDfG4/a6ncg4FLtQARCQCBkGgmGPy2Gq8S/fe+Xltz/6fd4yjoggWjap+8Ad13//05RVG3cmxLnN6u5vf/y1IOl2qjddc1X3Tu1M5nfv1O7eW6/9Yuzkg2k5X//w8wO336Dr0euuvCQlJfndz77bsWdfMBRlwJLiXO1aNb//9ht6dGpnxtSqqpIQ6+UIsV5XiWuCACDW7YyLcXvdbkVRSt0adk1LiPVEdSOmRGY0TUuMi5VCDr94cGJczCdfjw1GBFdtDWrF3X/ro8OGDiwJsAYpxYBe3X797qPX3v9yzebtgYAfAWO83gE9Oz12/+21U5KIpLns1qmVMv6L/z3/5gdLVm/kzMkQ+nRuc/21l7/1/pdRQ8TGuIvXaGQJMd5QSI+JcVXwtTCGRPj2C0/079X1p99mHkzPlBIa10u94ephz73x0dZd++w2N5qRrKZMR6PR/WnpBT6fqqqpycnJCXFlo4YJgEj6/EFd1xXGYmK8pcuzbogCXxEQOWx2l9MOiIaQPp9fSunQVJfbXcFmLijyC6ETQWxsnMIqrPHFo+wLhffuO+APBJwOR/36dePcrjIR1jIcCfuCYSKMcbts5W+OlfoLDSHTMrP8/oCq8JSE+JgYb2kLBDIcifiDISKM9XhKo4RKhyInLy8SiWqamhAXVyENxt4DaVk5+YBQKzmhfu1UOGaGjNJ/2nPwUE5untvjPqNxQwDIzc0ViC6H02m3lcaMI7JgNLp370FD12ulJifHx0XCYV8gQJzHuj2qUkn6ioiuF/n8vLxLD4sHgYBAAsZ6XIqilb5adl7+ocwclbNGDes5NK2gsEg3hKIqcV4PkczKK1A4k1ImxseDlFj87gIY5uUVmW5Qsyp56avt3Lc/J7dQYaxWSmLd1BQoUxtakiwoLBRSOmw2l9NlevSQhD8QDEd1ZDzG7VQUM65K6oZe6A8KSR6n02m3A4EuREFREQB4XA67zX4oK+tQepbT6WzWuL7KlQoGQml/DmZmZWXnILLaqckp8fGloe4VpvhARlZubr7TYWvaqAFDzMvPN4jsms3jcgICSFFQFBBSKIoa43Ei8kqDqgEgGA4LKT1OZ0Z2bq/zh0cFpibGYOnJnZCibMQUHFH6uuTEqKL4HpF4oGICiAqxohWePzKSlAhMK7aCT+Jo5XQra4GK7+qUD9jBo5S4LtOCeYGn0h8iKQVDVtaRVxpff8xwcmJIpSfOpQV2K3tSlE12cNzK5dUNwjUrr5cLYhSy9B5HJcN4eIoBy8xq6edSSoas3LGHlMVHOcfq9vEzVRSvC2UeKz84JKQ8MjGEeTmwbAC0lOLI2ZREWK5gOUlZYRIlAR6/k2WIvf9g+qMvvP3XsjVC0tAB3cpGi5nlm6nspu0oTlvTbGMVw7fNUx2s8GQl7ZjZmo7tiD2yNPgRh3Z0nBZKXgmq2QKV3Cso9z4l01xy8a/kkLIKsl22J+a1uTLDXHFNKS00jmVi+Y72loff4ug/XvY+aDG7igtpM0QoO8iltIcjpo1KHsTynSmuiG2edWKlc13JK5R4ZCvpW9lnqeQjRAJgJWN4rBQkVCI6cLxUJSXjgMhMq7lsP4kA4eiDbzJq5979o155x+20F/pCW7bvKSj0SaYwik76+l2lgnP4uAcOFQai3LW5qj15JCeP9kPH6AwCHDcrUonPEKvbQom7sPLTb3b0Nqvck6O+GWK5wcEqvOPxOlPJvPAKXq8Kw36UM71K/wUB8ZhXwir/FsKRR8BHPoyHP0I45mxW/EpVjqKOGIcjOnj09EFEHDEzK/fXGQucTod5cYYIkjzOV59+rHvHdid6+8CChf+HMAlnt2nNGtZjDBVVrZUS36dr+2svvahu7VpCiv8DIWLAiN+ErscAAAAASUVORK5CYII=" alt="University of Luxembourg">
@@ -443,7 +725,9 @@
     </div>
     <div>
       <h4>Take part</h4>
-      <p><a href="https://app.oxfordabstracts.com/stages/82849/submitter" target="_blank" rel="noopener">Submit a paper</a></p>
+      <p><a href="#local">Local information</a></p>
+      <p><a href="#lodging">Hotels &amp; booking</a></p>
+      <p><a href="hotelbookingform.pdf" target="_blank" rel="noopener">Hotel booking form (PDF)</a></p>
       <p><a href="https://www.stanford.edu/~jacksonm/CallPapersLuxembourg-2026" target="_blank" rel="noopener">Call for papers</a></p>
       <p><a href="https://mailchi.mp/7b7efbed4102/network-science-and-economics-conference-mailing-list" target="_blank" rel="noopener">Join the mailing list</a></p>
       <p><a href="https://www.visitluxembourg.com/" target="_blank" rel="noopener">Visiting Luxembourg</a></p>
@@ -557,20 +841,32 @@
   start();
 })();
 
-// Countdown to the submission deadline
+// Status line: counts down to whichever deadline is next, then to the conference itself.
 (function(){
   var el=document.getElementById('countdown');
   if(!el)return;
-  var deadline=new Date('2026-07-31T23:59:59+02:00').getTime();
+  var accor  = new Date('2026-09-24T23:59:59+02:00').getTime(); // promo code EVEBB deadline
+  var bw     = new Date('2026-10-09T23:59:59+02:00').getTime(); // Best Western rate released
+  var opens  = new Date('2026-10-23T09:00:00+02:00').getTime(); // conference begins
+  var closes = new Date('2026-10-25T23:59:59+02:00').getTime(); // conference ends
+  function days(ms){return Math.ceil(ms/86400000);}
+  function plural(n){return n===1?'day':'days';}
   function tick(){
     var now=Date.now();
-    var diff=deadline-now;
-    if(diff<=0){
-      el.innerHTML='<span>Submissions for the 2026 conference are now closed.</span>';
-      return;
+    if(now<accor){
+      var a=days(accor-now);
+      el.innerHTML='<b>'+a+'</b><span>'+plural(a)+' left to book at the conference hotel rates · September 24, 2026</span>';
+    }else if(now<bw){
+      var d=days(bw-now);
+      el.innerHTML='<b>'+d+'</b><span>'+plural(d)+' left to book the Best Western at the conference rate · October 9, 2026</span>';
+    }else if(now<opens){
+      var c=days(opens-now);
+      el.innerHTML='<b>'+c+'</b><span>'+plural(c)+' until the conference · October 23–25, 2026</span>';
+    }else if(now<closes){
+      el.innerHTML='<span>The conference is under way — welcome to Luxembourg.</span>';
+    }else{
+      el.innerHTML='<span>Thank you to everyone who joined us in Luxembourg.</span>';
     }
-    var days=Math.floor(diff/86400000);
-    el.innerHTML='<b>'+days+'</b><span>day'+(days===1?'':'s')+' until the submission deadline · July 31, 2026</span>';
   }
   tick();setInterval(tick,3600000);
 })();
