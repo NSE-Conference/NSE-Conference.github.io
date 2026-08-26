@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NSE 2026">
+  <rect width="64" height="64" rx="12" fill="#0E1A30"/>
+  <g stroke="#E8D9A8" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round">
+    <path d="M17 20 L44 14"/>
+    <path d="M17 20 L19 43"/>
+    <path d="M19 43 L44 14"/>
+    <path d="M19 43 L45 47"/>
+  </g>
+  <path d="M44 14 L45 47" stroke="#D9A441" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="17" cy="20" r="4.4" fill="#E8D9A8"/>
+  <circle cx="19" cy="43" r="4.4" fill="#E8D9A8"/>
+  <circle cx="44" cy="14" r="4.4" fill="#E8D9A8"/>
+  <circle cx="45" cy="47" r="8.2" fill="#D9A441"/>
+</svg>

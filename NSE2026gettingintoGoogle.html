@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSE 2026 on Google</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+</head>
+<body>
+<style>
+:root{
+  --ground:#F1F0EA;
+  --surface:#FBFAF6;
+  --surface-2:#E9E8DF;
+  --ink:#0E1A30;
+  --ink-soft:#33425E;
+  --muted:#5A6B85;
+  --line:rgba(14,26,48,.14);
+  --line-strong:rgba(14,26,48,.30);
+  --accent:#8A6318;
+  --accent-mark:#B0812B;
+  --accent-wash:rgba(176,129,43,.09);
+  --good:#2F6B4F;
+  --flag:#8A4B12;
+  --shadow:0 1px 2px rgba(14,26,48,.05), 0 12px 32px rgba(14,26,48,.06);
+
+  --display:"Space Grotesk",system-ui,sans-serif;
+  --body:"Spectral",Georgia,serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B1526;
+    --surface:#111E36;
+    --surface-2:#16233F;
+    --ink:#E9E8DF;
+    --ink-soft:#C2CBDC;
+    --muted:#8B99B2;
+    --line:rgba(232,217,168,.15);
+    --line-strong:rgba(232,217,168,.32);
+    --accent:#D9A441;
+    --accent-mark:#D9A441;
+    --accent-wash:rgba(217,164,65,.10);
+    --good:#7BC59B;
+    --flag:#E0A868;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 32px rgba(0,0,0,.38);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1526;
+  --surface:#111E36;
+  --surface-2:#16233F;
+  --ink:#E9E8DF;
+  --ink-soft:#C2CBDC;
+  --muted:#8B99B2;
+  --line:rgba(232,217,168,.15);
+  --line-strong:rgba(232,217,168,.32);
+  --accent:#D9A441;
+  --accent-mark:#D9A441;
+  --accent-wash:rgba(217,164,65,.10);
+  --good:#7BC59B;
+  --flag:#E0A868;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 32px rgba(0,0,0,.38);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.page{max-width:790px;margin:0 auto;padding:56px 26px 96px}
+
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.1rem,5.2vw,2.9rem);font-weight:700;letter-spacing:-.026em}
+h2{font-size:1.34rem;font-weight:600;letter-spacing:-.012em}
+h3{font-size:1.02rem;font-weight:600;letter-spacing:-.005em}
+p{margin:0}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent-mark);outline-offset:3px;border-radius:2px}
+strong{font-weight:600;color:var(--ink)}
+code,kbd{font-family:var(--mono);font-size:.86em;background:var(--accent-wash);
+  border:1px solid var(--line);border-radius:3px;padding:.1em .38em;word-break:break-word}
+
+.eyebrow{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent);
+}
+
+/* ---------- header ---------- */
+header.head{display:flex;flex-direction:column;gap:18px;
+  padding-bottom:30px;border-bottom:1px solid var(--line-strong)}
+.standfirst{font-size:1.14rem;color:var(--ink-soft);max-width:62ch}
+.status{display:flex;flex-wrap:wrap;gap:10px}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;
+  border:1px solid var(--line-strong);border-radius:999px;padding:6px 13px;
+  color:var(--ink-soft);background:var(--surface);
+}
+.pill .dot{width:7px;height:7px;border-radius:50%;flex:none}
+.pill.is-good .dot{background:var(--good)}
+.pill.is-flag .dot{background:var(--flag)}
+
+/* ---------- generic block ---------- */
+.block{display:flex;flex-direction:column;gap:16px;padding:46px 0 0}
+.block > p{max-width:66ch}
+.hint{color:var(--muted);font-size:.96rem;max-width:66ch}
+
+/* ---------- files ---------- */
+.files{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.file{
+  display:grid;grid-template-columns:210px 1fr;gap:8px 26px;
+  padding:15px 2px;border-bottom:1px solid var(--line);align-items:baseline;
+}
+.file .name{font-family:var(--mono);font-size:.84rem;font-weight:700;color:var(--ink);overflow-wrap:break-word}
+.file .name .tag{display:block;font-weight:400;font-size:.66rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--accent);margin-top:4px;word-break:normal;text-wrap:balance}
+.file .what{color:var(--ink-soft);font-size:.99rem}
+
+/* ---------- steps ---------- */
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:34px;counter-reset:s}
+ol.steps > li{
+  counter-increment:s;
+  display:grid;grid-template-columns:46px 1fr;gap:6px 20px;
+  position:relative;
+}
+ol.steps > li::before{
+  content:counter(s,decimal-leading-zero);
+  grid-column:1;grid-row:1 / span 2;
+  font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--accent);
+  padding-top:5px;letter-spacing:.04em;
+}
+ol.steps > li > h2{grid-column:2}
+ol.steps .body{grid-column:2;display:flex;flex-direction:column;gap:12px;margin-top:10px}
+ol.steps .body p{max-width:62ch}
+ol.steps .body ul{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:9px;max-width:62ch}
+ol.steps .body li::marker{color:var(--accent-mark)}
+
+.callout{
+  background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent-mark);
+  border-radius:0 5px 5px 0;padding:15px 18px;font-size:.97rem;color:var(--ink-soft);
+  display:flex;flex-direction:column;gap:8px;
+}
+.callout .lbl{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent)}
+
+pre{
+  margin:0;background:var(--surface);border:1px solid var(--line);border-radius:5px;
+  padding:14px 16px;overflow-x:auto;font-family:var(--mono);font-size:.8rem;
+  line-height:1.6;color:var(--ink-soft);box-shadow:var(--shadow)
+}
+pre .c{color:var(--muted)}
+
+/* ---------- link targets ---------- */
+.targets{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.target{
+  display:grid;grid-template-columns:1fr auto;gap:6px 20px;
+  padding:16px 2px;border-bottom:1px solid var(--line);align-items:start;
+}
+.target .who{font-family:var(--display);font-weight:600;font-size:1rem;color:var(--ink)}
+.target .why{grid-column:1;color:var(--ink-soft);font-size:.95rem;max-width:56ch}
+.meter{grid-column:2;grid-row:1 / span 2;display:flex;gap:4px;padding-top:7px}
+.meter i{width:9px;height:9px;border:1px solid var(--accent-mark);border-radius:1px;display:block}
+.meter i.on{background:var(--accent-mark)}
+.meter-key{display:flex;gap:16px;flex-wrap:wrap;align-items:center;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.meter-key .k{display:flex;align-items:center;gap:7px}
+
+/* ---------- notes ---------- */
+.note{
+  background:var(--surface-2);border:1px solid var(--line);border-radius:6px;
+  padding:20px 22px;display:flex;flex-direction:column;gap:9px;
+}
+.note h3{color:var(--ink)}
+.note p{color:var(--ink-soft);font-size:.98rem;max-width:62ch}
+
+footer.foot{
+  margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)
+}
+
+@media (max-width:620px){
+  .file{grid-template-columns:1fr;gap:4px}
+  ol.steps > li{grid-template-columns:32px 1fr;gap:6px 12px}
+  .target{grid-template-columns:1fr}
+  .meter{grid-column:1;grid-row:auto;padding-top:2px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="page">
+
+<header class="head">
+  <div class="eyebrow">Network Science &amp; Economics · Luxembourg 2026</div>
+  <h1>Getting the site into Google</h1>
+  <p class="standfirst">The page is live, but Google has never crawled it — a brand-new <code>github.io</code> address with no inbound links is invisible by default. Here is everything that changes that, in the order it needs doing.</p>
+  <div class="status">
+    <span class="pill is-good"><span class="dot"></span>Site live at nse-conference.github.io</span>
+    <span class="pill is-flag"><span class="dot"></span>0 pages indexed by Google</span>
+    <span class="pill is-flag"><span class="dot"></span>No robots.txt · no sitemap</span>
+  </div>
+</header>
+
+<section class="block">
+  <h2>The five files</h2>
+  <p>Everything below assumes these are committed to the root of the repository, alongside <code>index.html</code> and <code>.nojekyll</code>.</p>
+  <div class="files">
+    <div class="file">
+      <div class="name">index.html<span class="tag">Replaces the existing file</span></div>
+      <div class="what">Same page, same design — with a canonical address, crawling permissions, social-preview tags, and structured data describing the conference as an <em>event</em> (dates, venue, organiser) so Google can show it as more than a blue link.</div>
+    </div>
+    <div class="file">
+      <div class="name">robots.txt<span class="tag">New</span></div>
+      <div class="what">The first file a crawler asks for. Says every page is open, and points to the sitemap.</div>
+    </div>
+    <div class="file">
+      <div class="name">sitemap.xml<span class="tag">New</span></div>
+      <div class="what">The list of addresses you want indexed. One entry today; add more when the programme gets its own page.</div>
+    </div>
+    <div class="file">
+      <div class="name">og-image.png<span class="tag">New</span></div>
+      <div class="what">The 1200×630 preview card that appears when the link is posted to LinkedIn, X, Bluesky, Slack or WhatsApp. Built in the site's own colours and type.</div>
+    </div>
+    <div class="file">
+      <div class="name">favicon.svg<span class="tag">New</span></div>
+      <div class="what">The small icon in browser tabs — and in Google's mobile results, where every listing shows one.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>What to do</h2>
+  <ol class="steps">
+
+    <li>
+      <h2>Commit the files</h2>
+      <div class="body">
+        <p>In the repository, open <code>index.html</code>, select all, paste in the new version, and commit to <code>main</code>. Then <strong>Add file → Upload files</strong>, drop the other four in the root, and commit again.</p>
+        <p>GitHub Pages rebuilds in a minute or two. Confirm it worked by loading <code>https://nse-conference.github.io/robots.txt</code> in a browser — if you see the text, everything else is in place too.</p>
+      </div>
+    </li>
+
+    <li>
+      <h2>Add the site to Google Search Console</h2>
+      <div class="body">
+        <p>Go to <a href="https://search.google.com/search-console" target="_blank" rel="noopener">search.google.com/search-console</a> and sign in with the Google account you want to own this. <strong>Add property</strong> offers two boxes — choose <strong>URL prefix</strong>, on the right.</p>
+        <p>Enter the address exactly: <code>https://nse-conference.github.io/</code></p>
+        <div class="callout">
+          <span class="lbl">Why not the other box</span>
+          <p>The <strong>Domain</strong> option verifies through DNS records, and the DNS for <code>github.io</code> belongs to GitHub, not to you. It cannot be made to work here.</p>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <h2>Prove you own it</h2>
+      <div class="body">
+        <p>Google offers several methods. The <strong>HTML file</strong> one is the least fiddly for a Pages repository:</p>
+        <ul>
+          <li>Download the file Google gives you — something like <code>google1a2b3c4d5e6f7890.html</code>.</li>
+          <li>Upload it to the repository root and commit, exactly as in step 1.</li>
+          <li>Check it loads at <code>https://nse-conference.github.io/google1a2b….html</code>, then click <strong>Verify</strong>.</li>
+        </ul>
+        <p class="hint">The <strong>HTML tag</strong> method works equally well if you prefer: paste the <code>&lt;meta name="google-site-verification" …&gt;</code> line into <code>index.html</code> just under the <code>&lt;title&gt;</code>. Whichever you use, leave it in place afterwards — removing it un-verifies the site.</p>
+      </div>
+    </li>
+
+    <li>
+      <h2>Submit the sitemap</h2>
+      <div class="body">
+        <p>In the left menu: <strong>Sitemaps</strong> → type <code>sitemap.xml</code> → <strong>Submit</strong>. Status should read <em>Success</em> within a day.</p>
+      </div>
+    </li>
+
+    <li>
+      <h2>Ask for the homepage to be crawled now</h2>
+      <div class="body">
+        <p>Paste <code>https://nse-conference.github.io/</code> into the <strong>Inspect any URL</strong> bar at the top of Search Console, then click <strong>Request indexing</strong>. This puts the page in a priority queue — usually hours to a few days rather than weeks.</p>
+      </div>
+    </li>
+
+    <li>
+      <h2>Get other sites to link to it</h2>
+      <div class="body">
+        <p>This is the step that actually decides how quickly the site is found and how well it ranks. Google discovers and trusts pages mostly by following links from pages it already trusts. A sitemap says <em>this page exists</em>; links say <em>this page matters</em>.</p>
+        <div class="meter-key">
+          <span class="k"><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span> decisive</span>
+          <span class="k"><span class="meter"><i class="on"></i><i class="on"></i><i></i></span> strong</span>
+          <span class="k"><span class="meter"><i class="on"></i><i></i><i></i></span> worth doing</span>
+        </div>
+        <div class="targets">
+          <div class="target">
+            <div class="who">The series page at Stanford</div>
+            <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span>
+            <div class="why">Ask Matt Jackson to link “Luxembourg · 2026” on <a href="https://web.stanford.edu/~jacksonm/NSE.html" target="_blank" rel="noopener">web.stanford.edu/~jacksonm/NSE.html</a> to your address. That page already ranks for this conference, on a domain Google trusts deeply. This single link is worth more than everything else on this list.</div>
+          </div>
+          <div class="target">
+            <div class="who">uni.lu</div>
+            <span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i></span>
+            <div class="why">A Department of Finance / FDEF news item and an entry in the university events calendar. Strong domain, and topically exactly right.</div>
+          </div>
+          <div class="target">
+            <div class="who">Organisers' own pages</div>
+            <span class="meter"><i class="on"></i><i class="on"></i><i></i></span>
+            <div class="why">Your staff page, and the personal academic pages of the local and series organisers. Easy to arrange and each one is a real, relevant link.</div>
+          </div>
+          <div class="target">
+            <div class="who">Economics conference listings</div>
+            <span class="meter"><i class="on"></i><i class="on"></i><i></i></span>
+            <div class="why">INOMICS, WikiCFP, the AEA calls-for-papers listing, RePEc / NEP announcements, EconBiz. These are where economists actually look, so they bring visitors as well as links.</div>
+          </div>
+          <div class="target">
+            <div class="who">FNR</div>
+            <span class="meter"><i class="on"></i><i></i><i></i></span>
+            <div class="why">If the fund lists supported events, ask to be included — the logo is already on the page.</div>
+          </div>
+          <div class="target">
+            <div class="who">Announcements</div>
+            <span class="meter"><i class="on"></i><i></i><i></i></span>
+            <div class="why">The mailing list, LinkedIn, X, Bluesky. Social links count for little on their own, but they get the address in front of people who run sites that do count. The preview image makes those posts look like a real conference.</div>
+          </div>
+        </div>
+        <div class="callout">
+          <span class="lbl">One thing to avoid</span>
+          <p>Skip paid links and the “submit your site to 500 directories” services. They are the one category of link that can actively damage a site's standing.</p>
+        </div>
+      </div>
+    </li>
+
+  </ol>
+</section>
+
+<section class="block">
+  <h2>Checking whether it worked</h2>
+  <p>The fastest test — type this into Google. Nothing returned means not indexed yet; the homepage returned means done.</p>
+  <pre>site:nse-conference.github.io</pre>
+  <p>In Search Console, the <strong>Pages</strong> report is the fuller picture. <em>Discovered — currently not indexed</em> means Google knows about the page but hasn't judged it worth crawling; that is exactly what links fix.</p>
+  <p class="hint">Realistic timing: a few days if step 5 goes well, up to about three weeks for a new site with few links. If nothing after two weeks, request indexing again and chase the Stanford link.</p>
+</section>
+
+<section class="block">
+  <h2>Ten more minutes, if you have them</h2>
+  <p><a href="https://www.bing.com/webmasters" target="_blank" rel="noopener">Bing Webmaster Tools</a> lets you import the property straight from Search Console in a couple of clicks. Worth it because Bing's index feeds Copilot and several AI assistants, which is increasingly how people find conferences.</p>
+</section>
+
+<section class="block">
+  <h2>Two things about the page itself</h2>
+  <p class="hint">Not changed — these are yours to decide.</p>
+
+  <div class="note">
+    <h3>The submission deadline has passed</h3>
+    <p>The countdown in the hero already flips to “Submissions for the 2026 conference are now closed”, but <strong>Key dates</strong> still presents 31 July as the live deadline, and both large buttons still read “Submit a paper”. Once Google indexes the page, whatever it says is what prospective attendees see — worth pointing the page at notifications and registration instead.</p>
+  </div>
+
+  <div class="note">
+    <h3>The venue address in the structured data</h3>
+    <p>I used the university's general Belval address — <em>2, place de l'Université, L-4365 Esch-sur-Alzette</em>. If the conference sits in a specific building, change it in the <code>&lt;script type="application/ld+json"&gt;</code> block near the top of <code>index.html</code>; Google uses it for the map and location shown in event results.</p>
+  </div>
+</section>
+
+<section class="block">
+  <h2>For reference</h2>
+  <p>The two new text files, in full, in case they ever need recreating.</p>
+  <pre><span class="c"># robots.txt</span>
+User-agent: *
+Allow: /
+
+Sitemap: https://nse-conference.github.io/sitemap.xml</pre>
+  <pre><span class="c">&lt;!-- sitemap.xml --&gt;</span>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://nse-conference.github.io/&lt;/loc&gt;
+    &lt;lastmod&gt;2026-08-26&lt;/lastmod&gt;
+    &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;</pre>
+  <p class="hint">When the programme is published, add it to the page (or a new page listed in the sitemap) and request indexing again. Substantial, current content is the other half of ranking well.</p>
+</section>
+
+<footer class="foot">Prepared 26 August 2026 · Network Science &amp; Economics Conference, University of Luxembourg</footer>
+
+</div>
+
+</body>
+</html>

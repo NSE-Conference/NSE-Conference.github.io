@@ -1,0 +1,7 @@
+# Network Science & Economics Conference 2026 — University of Luxembourg
+# https://nse-conference.github.io/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://nse-conference.github.io/sitemap.xml
